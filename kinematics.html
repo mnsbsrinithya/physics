@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kinematics - Physics Concepts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #101c36;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 30px 50px;
+        }
+
+        .alt-section {
+            background-color: #f9c2d3;
+        }
+
+        h2, h3 {
+            color: #aa0055;
+        }
+
+        .key-concepts {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .concept-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 20px;
+            width: auto;
+            max-width: 250px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .concept-cards {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 20px;
+            width: auto;
+            max-width: 500px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .concept-card:hover {
+            transform: scale(1.05);
+        }
+        .concept-cards:hover {
+            transform: scale(1.05);
+        }
+
+        .equations {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .equation {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 20px;
+            width: 220px;
+            text-align: center;
+            position: relative;
+        }
+
+        .equation:hover::after {
+            content: attr(data-derivation);
+            position: absolute;
+            bottom: -80px;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background-color: #ffeff7;
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+
+        .examples {
+            background-color: #ffe4ec;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+        .solution {
+            margin-top: 10px;
+            background-color: #e6f7ff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Physics</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="applications.html">Applications</a>
+        <a href="halloffame.html">Hall of Fame</a>
+        <a href="games.html">Games</a>
+    </nav>
+</header>
+<section>
+    <h2>Introduction to Kinematics</h2>
+    <p>Kinematics is the branch of mechanics that describes the motion of objects without considering the forces that cause the motion.</p>
+</section>
+
+<section class="alt-section">
+    <h2 style="text-align: center;">Key Concepts</h2>
+    <div class="key-concepts">
+        <div class="concept-card">
+            <h3>Distance</h3>
+            <p>Distance between two points is the length of actual path travelled by the particle. It is a scalar quantity.
+                Unit : m(metre).</p>
+            <img src="distance.jpg" alt="Displacement Example" width="100%">
+        </div>
+        <div class="concept-card">
+            <h3>Displacement</h3>
+            <p>Displacement is a vector  drawn from the initial position (A) to the final position (B)
+                Unit :  m(metre)</p>
+            <img src="displacement.jpg" alt="Displacement Example" width="100%">
+        </div>
+        <div class="concept-card">
+            <h3>Velocity</h3>
+            <p>Velocity is the rate of change of position vector.
+                Kinematics Unit : ms–1 (metre per second)</p>
+            <img src="velocity.jpg" alt="Velocity Example" width="100%">
+        </div>
+        <div class="concept-card">
+            <h3>Acceleration</h3>
+            <p>Acceleration is defined as the rate of change of velocity. It is denoted by ‘a’ and is measured in the units of m/s2</p>
+            <img src="acc.jpg" alt="Acceleration Visual" width="100%">
+        </div>
+    </div>
+</section>
+<section>
+    <h2 style="text-align: center;">Average speed vs Average velocity</h2>
+    <div class="key-concepts">
+        <div class="concept-card">
+            <h3>Avg speed</h3>
+            <p>The average speed of an object can be defined as the total distance travelled by it in a particular interval of time. It can be calculated by dividing the total distance travelled by the total time taken.
+                average speed (avg) = Total distance covered/ Total time taken</p>
+
+        </div>
+        <div class="concept-card">
+            <h3>Avg velocity</h3>
+            <p> Average velocity is a vector quantity. Average velocity is defined as the change in position or displacement (∆x) divided by the time intervals (∆t) in which the displacement occurs.The average velocity can be positive or negative depending upon the sign of the displacement. The SI unit of average velocity is meters per second (m/s or ms-1)</p>
+
+        </div>
+
+    </div>
+</section>
+<section class="alt-section">
+    <h2 style="text-align: center;"></h2>
+    <div class="key-concepts">
+
+        <div class="concept-cards">
+            <h3>Characteristics of v-t graph</h3>
+            <p>The velocity of an object is its speed in a particular direction. Two cars travelling at the same speed but in opposite directions have different velocities.
+                A velocity-time graph shows the speed and direction an object travels over a specific period of time. Velocity-time graphs are also called speed-time graphs.
+                When an object is moving with a constant velocity, the line on the graph is horizontal. When the horizontal line is at zero velocity, the object is at rest. When an object is undergoing constant acceleration, the line on the graph is straight but sloped.
+                Curved lines on velocity-time graphs also show changes in velocity, but not with a constant acceleration or deceleration. The diagram shows some typical lines on a velocity-time graph.</p>
+
+        </div>
+        <div class="concept-cards" width="500px">
+            <h3>graphical representation of motion</h3>
+            <p>Slope of tangent to position time graph gives velocity.
+                Slope of tangent to v−t curve gives acceleration.
+                Area enclosed between v−t curve and time axis between an interval of time gives displacement.
+                Slope of tangent to a−t curve gives rate of change of acceleration
+                Area enclosed between a−t curve and time axis between an interval of time gives change in velocity</p>
+            <img src="vt.jpg" alt="v-t graph" width="50%">
+        </div>
+    </div>
+</section>
+<section>
+    <h2 style="text-align:center;">Equations of Motion</h2>
+    <p style="text-align:center;">For constant acceleration, the following equations are used:</p>
+    <div class="equations">
+        <div class="equation" data-derivation="Derived from the definition of acceleration: a = (v - u)/t">
+            <h3>1st Equation</h3>
+            <p>v = u + at</p>
+        </div>
+        <div class="equation" data-derivation="From integrating velocity-time graph: area under curve = displacement">
+            <h3>2nd Equation</h3>
+            <p>s = ut + ½at²</p>
+        </div>
+        <div class="equation" data-derivation="Combining 1st and 2nd equations: eliminating time t">
+            <h3>3rd Equation</h3>
+            <p>v² = u² + 2as</p>
+        </div>
+    </div>
+</section>
+<section class="alt-section">
+    <h2 style="text-align: center;">Projectile motion</h2>
+    <div class="key-concepts">
+        <div class="concept-cards">
+
+            <p>When a particle is thrown obliquely near the earth’s surface, it moves along a curved path under constant acceleration that is directed towards the centre of the earth (we assume that the particle remains close to the surface of the earth). The path of such a particle is called a projectile and the motion is called projectile motion</p>
+            <img src="projectile.jpg" alt="v-t graph" width="100%">
+            <p>Total Time of Flight: Resultant displacement (s) = 0 in Vertical direction. Therefore, by using the Equation of motion:
+                gt2 = 2(uyt – sy) [Here,uy = u sin θ and sy = 0]
+                i.e. gt2  = 2t × u sin θ<br>
+               1. Along the x-axis: uniform velocity, responsible for the horizontal (forward) motion of the particle.
+               2. Along y-axis: uniform acceleration, responsible for the vertical (downwards) motion of the particle</p>
+        </div>
+
+    </div>
+</section>
+<hr style="border: 1px solid white;">
+
+
+<section class="alt-section">
+    <h2>Example Questions</h2>
+    <div class="examples">
+        <h3>1.  Bird is flying in north-east direction with or v = 4√2 m/s with respect to the wind and the wind blowing from north to south with speed 1 m/s. Find the magnitude of the displacement of the bird in 3 sec?</h3>
+        <p><strong>Solution:</strong> </p>
+
+        <h3>2. A stone is thrown vertically upward with a velocity of 20 m/s. How long does it take to return to the thrower's hand?</h3>
+        <p><strong>Solution:</strong> Total time = 2u/g = 40/9.8 ≈ 4.08 s</p>
+
+        <h3>3. A car is moving with velocity 72 km/h. If brakes are applied to stop the car in 10 s, find acceleration and distance.</h3>
+        <p><strong>Solution:</strong> v = 0, u = 20 m/s, t = 10s ⇒ a = -2 m/s², s = ut + ½at² = 200 - 100 = 100 m</p>
+
+        <h3>4. A person throws a stone vertically upwards with velocity u. If it reaches max height in 5 s, find u.</h3>
+        <p><strong>Solution:</strong> At max height, v = 0 ⇒ v = u - gt ⇒ 0 = u - 10×5 ⇒ u = 50 m/s</p>
+
+        <h3>5. A train moves with uniform acceleration from rest. It attains 40 m/s in 20 s. Find distance traveled.</h3>
+        <p><strong>Solution:</strong> u = 0, v = 40, t = 20 ⇒ s = ut + ½at² = 0 + ½ × 2 × 400 = 400 m</p>
+    </div>
+</section>
+
+</body>
+</html>

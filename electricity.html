@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electricity & Electrostatics - Physics Concepts</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f6fb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 30px 50px;
+    }
+
+    h2, h3 {
+      color: #1e3a8a;
+    }
+
+    .concepts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .concept-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .concept-card:hover {
+      transform: scale(1.05);
+    }
+
+    .equations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .equation {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      width: 240px;
+      text-align: center;
+      position: relative;
+    }
+
+    .equation:hover::after {
+      content: attr(data-info);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #e6eeff;
+      color: #333;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+
+    .examples {
+      background-color: #e9f0ff;
+      padding: 25px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    .alt-section {
+      background-color: #ffffff;
+      padding: 40px 50px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Physics</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="applications.html">Applications</a>
+      <a href="halloffame.html">Hall of Fame</a>
+      <a href="games.html">Games</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Introduction to Electricity & Electrostatics</h2>
+    <p>Electricity involves the movement of electric charges, whereas electrostatics studies stationary charges and the forces between them. These concepts are foundational for understanding electric circuits, fields, and potential.</p>
+  </section>
+
+  <section class="alt-section">
+    <h2 style="text-align:center;">Core Concepts</h2>
+    <div class="concepts">
+      <div class="concept-card">
+        <h3>Electric Charge</h3>
+        <p>Fundamental property of matter; can be positive or negative.</p>
+        <img src="charge.jpg" alt="Electric Charge">
+      </div>
+
+      <div class="concept-card">
+        <h3>Electric Field</h3>
+        <p>Region around a charge where force is experienced.</p>
+        <img src="field.jpg" alt="Electric Field">
+      </div>
+
+      <div class="concept-card">
+        <h3>Electric Current</h3>
+        <p>Rate of flow of electric charge in a conductor.</p>
+        <img src="current.jpg" alt="Electric Current">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Important Equations</h2>
+    <div class="equations">
+      <div class="equation" data-info="F = Force, k = Coulomb constant, q₁ & q₂ = charges, r = distance">
+        <h3>F = k * q₁q₂ / r²</h3>
+        <p>Coulomb's Law</p>
+      </div>
+      <div class="equation" data-info="E = Electric field, F = Force, q = charge">
+        <h3>E = F / q</h3>
+        <p>Electric Field</p>
+      </div>
+      <div class="equation" data-info="V = Voltage, I = Current, R = Resistance">
+        <h3>V = IR</h3>
+        <p>Ohm's Law</p>
+      </div>
+      <div class="equation" data-info="P = Power, V = Voltage, I = Current">
+        <h3>P = VI</h3>
+        <p>Electric Power</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-section">
+    <h2>Electric Circuits & Electrostatics Applications</h2>
+    <ul>
+      <li><strong>Capacitors:</strong> Store electrical energy in an electric field.</li>
+      <li><strong>Resistors:</strong> Oppose current flow and regulate voltage.</li>
+      <li><strong>Static Electricity:</strong> Caused by imbalance of electric charges.</li>
+      <li><strong>Lightning:</strong> Example of electrostatic discharge in nature.</li>
+    </ul>
+    <img src="circuit.jpg" alt="Electric Circuit Diagram">
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Example Problems</h2>
+    <div class="examples">
+      <h3>1. What is the force between two 1 μC charges 1 m apart?</h3>
+      <p><strong>Solution:</strong> F = 9×10⁹ × (10⁻⁶)² / 1² = 0.009 N</p>
+
+      <h3>2. A bulb uses 2 A current with 12 V supply. Find its resistance.</h3>
+      <p><strong>Solution:</strong> R = V/I = 12 / 2 = 6 Ω</p>
+
+      <h3>3. Calculate power used by a device drawing 3 A at 220 V.</h3>
+      <p><strong>Solution:</strong> P = VI = 220 × 3 = 660 W</p>
+    </div>
+  </section>
+</body>
+</html>

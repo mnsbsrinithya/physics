@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work, Power & Energy - Physics Concepts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #101c36;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 30px 50px;
+    }
+
+    .alt-section {
+      background-color: #f2f2f2;
+    }
+
+    h2, h3 {
+      color: #aa0055;
+    }
+
+    .key-concepts {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .concept-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      max-width: 250px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .concept-card:hover {
+      transform: scale(1.05);
+    }
+
+    .equations {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .equation {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      width: 220px;
+      text-align: center;
+      position: relative;
+    }
+
+    .equation:hover::after {
+      content: attr(data-derivation);
+      position: absolute;
+      bottom: -80px;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      background-color: #ffeff7;
+      border-radius: 10px;
+      font-size: 0.9em;
+    }
+
+    .examples {
+      background-color: #ffe4ec;
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Physics</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="applications.html">Applications</a>
+      <a href="halloffame.html">Hall of Fame</a>
+      <a href="games.html">Games</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Introduction to Work, Power & Energy</h2>
+    <p>These concepts help us understand how forces cause movement, and how energy is transferred and conserved in physical systems.</p>
+  </section>
+
+  <section class="alt-section">
+    <h2 style="text-align: center;">Key Concepts</h2>
+    <div class="key-concepts">
+      <div class="concept-card">
+        <h3>Work</h3>
+        <p>Work is said to be done when a force is applied on an object and it causes displacement. <br><strong>W = F × d × cos(θ)</strong><br>Unit: Joule (J)</p>
+        <img src="work.jpg" alt="Work" width="100%">
+      </div>
+
+      <div class="concept-card">
+        <h3>Power</h3>
+        <p>Power is the rate at which work is done or energy is transferred.<br><strong>P = W/t</strong><br>Unit: Watt (W)</p>
+        <img src="power.jpg" alt="Power" width="100%">
+      </div>
+
+      <div class="concept-card">
+        <h3>Energy</h3>
+        <p>Energy is the capacity to do work. It exists in different forms like kinetic, potential, thermal, etc.<br>Unit: Joule (J)</p>
+        <img src="energy.jpg" alt="Energy" width="100%">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Equations</h2>
+    <div class="equations">
+      <div class="equation" data-derivation="Work done when force is constant and angle θ is between force and displacement.">
+        <h3>Work</h3>
+        <p>W = F × d × cos(θ)</p>
+      </div>
+      <div class="equation" data-derivation="Power is work done over time taken.">
+        <h3>Power</h3>
+        <p>P = W / t</p>
+      </div>
+      <div class="equation" data-derivation="Kinetic Energy is the energy of motion.">
+        <h3>Kinetic Energy</h3>
+        <p>KE = ½mv²</p>
+      </div>
+      <div class="equation" data-derivation="Potential Energy due to height above reference.">
+        <h3>Potential Energy</h3>
+        <p>PE = mgh</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-section">
+    <h2>Law of Conservation of Energy</h2>
+    <p style="text-align: center;">Energy can neither be created nor destroyed. It can only be transformed from one form to another, but the total energy of an isolated system remains constant.</p>
+    <img src="conservation.jpg" alt="Energy Conservation" style="display: block; margin: 20px auto; max-width: 500px; width: 100%;">
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Example Problems</h2>
+    <div class="examples">
+      <h3>1. A box is pulled with a force of 20 N through 5 m. What is the work done?</h3>
+      <p><strong>Solution:</strong> W = F × d = 20 × 5 = 100 J</p>
+
+      <h3>2. An object of mass 2 kg is lifted to a height of 10 m. Find potential energy.</h3>
+      <p><strong>Solution:</strong> PE = mgh = 2 × 10 × 10 = 200 J</p>
+
+      <h3>3. A car does 1000 J of work in 10 seconds. What is its power?</h3>
+      <p><strong>Solution:</strong> P = W / t = 1000 / 10 = 100 W</p>
+
+      <h3>4. Find the kinetic energy of a 3 kg object moving at 4 m/s.</h3>
+      <p><strong>Solution:</strong> KE = ½mv² = 0.5 × 3 × 16 = 24 J</p>
+    </div>
+  </section>
+</body>
+</html>

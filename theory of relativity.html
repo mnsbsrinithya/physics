@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Theory of Relativity - Physics Concepts</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f4f4f5;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #111827;
+      color: #ffffff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 50px;
+    }
+
+    h2, h3 {
+      color: #1e40af;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 260px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .equation-box {
+      background-color: #ffffff;
+      border-left: 5px solid #1e40af;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+
+    .applications, .examples {
+      background-color: #e0e7ff;
+      border-radius: 12px;
+      padding: 25px;
+      margin-top: 30px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #111827;
+      color: #fff;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Theory of Relativity</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Topics</a>
+      <a href="#">Equations</a>
+      <a href="#">Examples</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Overview</h2>
+    <p>
+      The Theory of Relativity, developed by Albert Einstein, revolutionized the understanding of space, time, and gravity. It includes two interrelated theories: Special Relativity and General Relativity.
+    </p>
+  </section>
+
+  <section>
+    <h2>Key Concepts</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Special Relativity</h3>
+        <p>Deals with objects moving at constant speed, especially close to the speed of light. Introduces the concepts of time dilation and length contraction.</p>
+      </div>
+      <div class="card">
+        <h3>General Relativity</h3>
+        <p>Explains gravity as the curvature of spacetime caused by mass and energy.</p>
+      </div>
+      <div class="card">
+        <h3>Time Dilation</h3>
+        <p>Time runs slower for objects moving close to the speed of light relative to an observer.</p>
+      </div>
+      <div class="card">
+        <h3>Mass-Energy Equivalence</h3>
+        <p>Energy and mass are interchangeable, as expressed in Einstein’s famous equation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Important Equations</h2>
+    <div class="equation-box">
+      <h3>E = mc²</h3>
+      <p>Mass-energy equivalence. Energy (E) equals mass (m) times the speed of light (c) squared.</p>
+    </div>
+    <div class="equation-box">
+      <h3>t′ = t / √(1 - v²/c²)</h3>
+      <p>Time Dilation: Time measured by a moving observer appears longer.</p>
+    </div>
+    <div class="equation-box">
+      <h3>L′ = L√(1 - v²/c²)</h3>
+      <p>Length Contraction: Length appears shorter in the direction of motion.</p>
+    </div>
+    <div class="equation-box">
+      <h3>F = G(m₁m₂)/r² (Modified in GR)</h3>
+      <p>Newton’s Law is modified in General Relativity to include spacetime curvature.</p>
+    </div>
+  </section>
+
+  <section class="applications">
+    <h2>Applications</h2>
+    <ul>
+      <li><strong>GPS Systems:</strong> Require time correction due to relativistic effects.</li>
+      <li><strong>Particle Accelerators:</strong> Use relativistic mass and energy calculations.</li>
+      <li><strong>Astrophysics:</strong> Explains black holes, gravitational lensing, and the expansion of the universe.</li>
+      <li><strong>Nuclear Energy:</strong> Based on mass-energy equivalence (E=mc²).</li>
+    </ul>
+  </section>
+
+  <section class="examples">
+    <h2>Example Problems</h2>
+    <h3>1. A spaceship travels at 0.8c. How much time passes for the astronauts if 10 years pass on Earth?</h3>
+    <p><strong>Solution:</strong> t′ = t / √(1 - v²/c²) = 10 / √(1 - 0.64) = 10 / √0.36 = 10 / 0.6 = 16.67 years</p>
+
+    <h3>2. Find the energy equivalent of 2 kg of mass.</h3>
+    <p><strong>Solution:</strong> E = mc² = 2 × (3×10⁸)² = 1.8 × 10¹⁷ J</p>
+
+    <h3>3. A rod moving at 0.6c has a rest length of 1 m. What is its length to an observer?</h3>
+    <p><strong>Solution:</strong> L′ = L√(1 - v²/c²) = 1 × √(1 - 0.36) = √0.64 = 0.8 m</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Physics Learning Hub | Relativity Explained
+  </footer>
+</body>
+</html>

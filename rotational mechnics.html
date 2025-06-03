@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rotational Mechanics - Physics Concepts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #101c36;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 30px 50px;
+    }
+
+    .alt-section {
+      background-color: #f2f2f2;
+    }
+
+    h2, h3 {
+      color: #aa0055;
+    }
+
+    .key-concepts {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .concept-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      max-width: 250px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .concept-card:hover {
+      transform: scale(1.05);
+    }
+
+    .equations {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .equation {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      width: 220px;
+      text-align: center;
+      position: relative;
+    }
+
+    .equation:hover::after {
+      content: attr(data-derivation);
+      position: absolute;
+      bottom: -90px;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      background-color: #ffeff7;
+      border-radius: 10px;
+      font-size: 0.9em;
+    }
+
+    .examples {
+      background-color: #ffe4ec;
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Physics</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="applications.html">Applications</a>
+      <a href="halloffame.html">Hall of Fame</a>
+      <a href="games.html">Games</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Introduction to Rotational Mechanics</h2>
+    <p>Rotational mechanics deals with the motion of bodies that rotate about an axis. Just like linear motion, it has concepts of angular displacement, angular velocity, torque, and moment of inertia.</p>
+  </section>
+
+  <section class="alt-section">
+    <h2 style="text-align: center;">Key Concepts</h2>
+    <div class="key-concepts">
+      <div class="concept-card">
+        <h3>Angular Displacement</h3>
+        <p>Change in angular position of a rotating object. <br><strong>θ (in radians)</strong></p>
+        <img src="angular_displacement.jpg" alt="Angular Displacement" width="100%">
+      </div>
+
+      <div class="concept-card">
+        <h3>Torque</h3>
+        <p>The rotational equivalent of force. <br><strong>τ = r × F</strong></p>
+        <img src="torque.jpg" alt="Torque" width="100%">
+      </div>
+
+      <div class="concept-card">
+        <h3>Moment of Inertia</h3>
+        <p>Measure of an object's resistance to angular acceleration. <br><strong>I = Σmr²</strong></p>
+        <img src="moment_of_inertia.jpg" alt="Moment of Inertia" width="100%">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Equations</h2>
+    <div class="equations">
+      <div class="equation" data-derivation="θ is the angular displacement, ω is angular velocity, α is angular acceleration.">
+        <h3>Rotational Kinematics</h3>
+        <p>θ = ω₀t + ½αt²</p>
+      </div>
+      <div class="equation" data-derivation="Net torque equals moment of inertia times angular acceleration.">
+        <h3>Rotational Dynamics</h3>
+        <p>τ = Iα</p>
+      </div>
+      <div class="equation" data-derivation="Rotational kinetic energy is like ½mv² in linear motion.">
+        <h3>Rotational KE</h3>
+        <p>KE = ½Iω²</p>
+      </div>
+      <div class="equation" data-derivation="Angular momentum for a rotating body.">
+        <h3>Angular Momentum</h3>
+        <p>L = Iω</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-section">
+    <h2>Law of Conservation of Angular Momentum</h2>
+    <p style="text-align: center;">In the absence of external torque, the total angular momentum of a system remains constant.</p>
+    <img src="angular_momentum.jpg" alt="Angular Momentum Conservation" style="display: block; margin: 20px auto; max-width: 500px; width: 100%;">
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Example Problems</h2>
+    <div class="examples">
+      <h3>1. A wheel of moment of inertia 2 kg·m² is rotating with angular speed 5 rad/s. Find rotational KE.</h3>
+      <p><strong>Solution:</strong> KE = ½Iω² = 0.5 × 2 × 25 = 25 J</p>
+
+      <h3>2. Find torque when force of 10 N is applied at 0.5 m from axis.</h3>
+      <p><strong>Solution:</strong> τ = r × F = 0.5 × 10 = 5 N·m</p>
+
+      <h3>3. A disc of I = 1.5 kg·m² has α = 2 rad/s². Find torque.</h3>
+      <p><strong>Solution:</strong> τ = Iα = 1.5 × 2 = 3 N·m</p>
+
+      <h3>4. A gymnast reduces her moment of inertia to half. What happens to angular velocity?</h3>
+      <p><strong>Solution:</strong> L = Iω constant ⇒ ω doubles if I halves.</p>
+    </div>
+  </section>
+</body>
+</html>

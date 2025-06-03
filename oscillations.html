@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oscillations & EM Waves - Physics Concepts</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #2a2a72;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 30px 50px;
+    }
+
+    h2, h3 {
+      color: #2a2a72;
+    }
+
+    .concepts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .concept-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .concept-card:hover {
+      transform: scale(1.05);
+    }
+
+    .equations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .equation {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      width: 240px;
+      text-align: center;
+      position: relative;
+    }
+
+    .equation:hover::after {
+      content: attr(data-info);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #eaf1ff;
+      color: #333;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+
+    .examples {
+      background-color: #e8f4ff;
+      padding: 25px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    .alt-section {
+      background-color: #ffffff;
+      padding: 40px 50px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Physics</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="applications.html">Applications</a>
+      <a href="halloffame.html">Hall of Fame</a>
+      <a href="games.html">Games</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Introduction to Oscillations & EM Waves</h2>
+    <p>Oscillations refer to repetitive variations, typically in time, of a physical quantity. Electromagnetic (EM) waves are waves of electric and magnetic fields oscillating perpendicular to each other and the direction of wave propagation.</p>
+  </section>
+
+  <section class="alt-section">
+    <h2 style="text-align:center;">Core Concepts</h2>
+    <div class="concepts">
+      <div class="concept-card">
+        <h3>Simple Harmonic Motion</h3>
+        <p>Motion in which the restoring force is proportional to displacement.</p>
+        <img src="shm.jpg" alt="Simple Harmonic Motion">
+      </div>
+
+      <div class="concept-card">
+        <h3>Resonance</h3>
+        <p>When the frequency of driving force matches the natural frequency.</p>
+        <img src="resonance.jpg" alt="Resonance">
+      </div>
+
+      <div class="concept-card">
+        <h3>EM Waves</h3>
+        <p>Waves consisting of oscillating electric and magnetic fields.</p>
+        <img src="emwaves.jpg" alt="Electromagnetic Waves">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Important Equations</h2>
+    <div class="equations">
+      <div class="equation" data-info="x = Displacement, A = Amplitude, ω = Angular frequency, t = Time">
+        <h3>x(t) = A sin(ωt + φ)</h3>
+        <p>SHM Equation</p>
+      </div>
+      <div class="equation" data-info="T = Time period, m = mass, k = spring constant">
+        <h3>T = 2π√(m/k)</h3>
+        <p>Mass-Spring Oscillator</p>
+      </div>
+      <div class="equation" data-info="f = frequency, λ = wavelength, c = speed of light">
+        <h3>c = fλ</h3>
+        <p>Wave Equation</p>
+      </div>
+      <div class="equation" data-info="E = Electric field, B = Magnetic field, c = speed of light">
+        <h3>E/B = c</h3>
+        <p>Relation in EM Waves</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-section">
+    <h2>Types of Electromagnetic Waves</h2>
+    <ul>
+      <li><strong>Radio Waves:</strong> Used in communication systems.</li>
+      <li><strong>Microwaves:</strong> Used in cooking and radar.</li>
+      <li><strong>Infrared:</strong> Used in night vision and heating.</li>
+      <li><strong>Visible Light:</strong> The light detectable by the human eye.</li>
+      <li><strong>Ultraviolet:</strong> Causes fluorescence and sunburn.</li>
+      <li><strong>X-rays:</strong> Used in imaging bones.</li>
+      <li><strong>Gamma Rays:</strong> High energy, used in cancer treatment.</li>
+    </ul>
+    <img src="em_spectrum.jpg" alt="Electromagnetic Spectrum">
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Example Problems</h2>
+    <div class="examples">
+      <h3>1. A mass of 0.5 kg is attached to a spring of constant 200 N/m. Find the time period.</h3>
+      <p><strong>Solution:</strong> T = 2π√(0.5 / 200) ≈ 0.314 s</p>
+
+      <h3>2. If EM wave has frequency 100 MHz, find its wavelength.</h3>
+      <p><strong>Solution:</strong> λ = c/f = 3×10⁸ / 100×10⁶ = 3 m</p>
+
+      <h3>3. An object undergoes SHM with amplitude 4 cm and ω = 2 rad/s. Find max velocity.</h3>
+      <p><strong>Solution:</strong> vmax = Aω = 0.04 × 2 = 0.08 m/s</p>
+    </div>
+  </section>
+</body>
+</html>

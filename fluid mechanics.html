@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fluid Mechanics - Physics Concepts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 30px 50px;
+    }
+
+    .alt-section {
+      background-color: #f0f8ff;
+    }
+
+    h2, h3 {
+      color: #004488;
+    }
+
+    .key-concepts {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .concept-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      max-width: 250px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .concept-card:hover {
+      transform: scale(1.05);
+    }
+
+    .equations {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .equation {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      width: 220px;
+      text-align: center;
+      position: relative;
+    }
+
+    .equation:hover::after {
+      content: attr(data-derivation);
+      position: absolute;
+      bottom: -90px;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      background-color: #e9f5ff;
+      border-radius: 10px;
+      font-size: 0.9em;
+    }
+
+    .examples {
+      background-color: #e0f7fa;
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Physics</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="applications.html">Applications</a>
+      <a href="halloffame.html">Hall of Fame</a>
+      <a href="games.html">Games</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Introduction to Fluid Mechanics</h2>
+    <p>Fluid mechanics is the study of fluids (liquids and gases) and the forces on them. It includes concepts like pressure, buoyancy, and flow behavior.</p>
+  </section>
+
+  <section class="alt-section">
+    <h2 style="text-align: center;">Key Concepts</h2>
+    <div class="key-concepts">
+      <div class="concept-card">
+        <h3>Density (ρ)</h3>
+        <p>Mass per unit volume. <br><strong>ρ = m/V</strong></p>
+        <img src="density.jpg" alt="Density" width="100%">
+      </div>
+
+      <div class="concept-card">
+        <h3>Pressure (P)</h3>
+        <p>Force per unit area. <br><strong>P = F/A</strong></p>
+        <img src="pressure.jpg" alt="Pressure" width="100%">
+      </div>
+
+      <div class="concept-card">
+        <h3>Buoyant Force</h3>
+        <p>Upward force by fluid. <br><strong>F_b = ρVg</strong></p>
+        <img src="buoyancy.jpg" alt="Buoyancy" width="100%">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Important Equations</h2>
+    <div class="equations">
+      <div class="equation" data-derivation="Defines how tightly matter is packed.">
+        <h3>Density</h3>
+        <p>ρ = m / V</p>
+      </div>
+      <div class="equation" data-derivation="Pressure in static fluids.">
+        <h3>Pressure</h3>
+        <p>P = hρg</p>
+      </div>
+      <div class="equation" data-derivation="Upward force on submerged body.">
+        <h3>Buoyancy</h3>
+        <p>F_b = ρVg</p>
+      </div>
+      <div class="equation" data-derivation="Conservation of energy in fluid flow.">
+        <h3>Bernoulli's Equation</h3>
+        <p>P + ½ρv² + ρgh = constant</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-section">
+    <h2>Pascal's and Archimedes' Principles</h2>
+    <ul>
+      <li><strong>Pascal’s Principle:</strong> A pressure change at any point in a confined fluid is transmitted undiminished.</li>
+      <li><strong>Archimedes’ Principle:</strong> A body submerged in fluid experiences an upward force equal to the weight of displaced fluid.</li>
+    </ul>
+    <img src="archimedes_pascal.jpg" alt="Principles" style="display: block; margin: 20px auto; max-width: 500px; width: 100%;">
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Example Problems</h2>
+    <div class="examples">
+      <h3>1. What is the pressure at 10 m depth in water?</h3>
+      <p><strong>Solution:</strong> P = hρg = 10 × 1000 × 9.8 = 98000 Pa</p>
+
+      <h3>2. Find buoyant force on 2 m³ object in water.</h3>
+      <p><strong>Solution:</strong> F_b = ρVg = 1000 × 2 × 9.8 = 19600 N</p>
+
+      <h3>3. Calculate density if m = 500 kg, V = 0.5 m³</h3>
+      <p><strong>Solution:</strong> ρ = m/V = 500 / 0.5 = 1000 kg/m³</p>
+
+      <h3>4. Use Bernoulli: If P₁ + ½ρv₁² = P₂ + ½ρv₂²</h3>
+      <p><strong>Application:</strong> Used in airplane wings, pipe flow, etc.</p>
+    </div>
+  </section>
+</body>
+</html>

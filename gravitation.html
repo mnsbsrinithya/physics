@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gravitation - Physics Concepts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #101c36;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 30px 50px;
+    }
+
+    .alt-section {
+      background-color: #f2f2f2;
+    }
+
+    h2, h3 {
+      color: #0055aa;
+    }
+
+    .key-concepts {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .concept-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      max-width: 250px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .concept-card:hover {
+      transform: scale(1.05);
+    }
+
+    .equations {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .equation {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      width: 220px;
+      text-align: center;
+      position: relative;
+    }
+
+    .equation:hover::after {
+      content: attr(data-derivation);
+      position: absolute;
+      bottom: -90px;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      background-color: #e9f5ff;
+      border-radius: 10px;
+      font-size: 0.9em;
+    }
+
+    .examples {
+      background-color: #e8f0ff;
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Physics</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="applications.html">Applications</a>
+      <a href="halloffame.html">Hall of Fame</a>
+      <a href="games.html">Games</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Introduction to Gravitation</h2>
+    <p>Gravitation is the force of attraction between any two masses in the universe. It governs the motion of celestial bodies and objects on Earth.</p>
+  </section>
+
+  <section class="alt-section">
+    <h2 style="text-align: center;">Key Concepts</h2>
+    <div class="key-concepts">
+      <div class="concept-card">
+        <h3>Gravitational Force</h3>
+        <p>Attractive force between two masses. <br><strong>F = G(m₁m₂)/r²</strong></p>
+        <img src="gravitational_force.jpg" alt="Gravitational Force" width="100%">
+      </div>
+
+      <div class="concept-card">
+        <h3>Gravitational Field</h3>
+        <p>The region where a mass experiences a gravitational force. <br><strong>g = F/m</strong></p>
+        <img src="gravitational_field.jpg" alt="Gravitational Field" width="100%">
+      </div>
+
+      <div class="concept-card">
+        <h3>Acceleration due to Gravity</h3>
+        <p>Near Earth's surface: <br><strong>g = 9.8 m/s²</strong></p>
+        <img src="acceleration_gravity.jpg" alt="g value" width="100%">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Equations</h2>
+    <div class="equations">
+      <div class="equation" data-derivation="Universal law of gravitation.">
+        <h3>Newton's Law</h3>
+        <p>F = G(m₁m₂)/r²</p>
+      </div>
+      <div class="equation" data-derivation="Gravitational field strength.">
+        <h3>Field Strength</h3>
+        <p>g = GM/r²</p>
+      </div>
+      <div class="equation" data-derivation="Potential energy between two masses.">
+        <h3>Gravitational PE</h3>
+        <p>U = -G(m₁m₂)/r</p>
+      </div>
+      <div class="equation" data-derivation="Escape velocity to leave Earth's gravity.">
+        <h3>Escape Velocity</h3>
+        <p>vₑ = √(2GM/R)</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-section">
+    <h2>Kepler's Laws of Planetary Motion</h2>
+    <ul>
+      <li><strong>1st Law:</strong> Planets move in elliptical orbits with the Sun at one focus.</li>
+      <li><strong>2nd Law:</strong> Line joining planet and Sun sweeps equal areas in equal times.</li>
+      <li><strong>3rd Law:</strong> T² ∝ R³, where T is the orbital period and R is the radius.</li>
+    </ul>
+    <img src="kepler_laws.jpg" alt="Kepler's Laws" style="display: block; margin: 20px auto; max-width: 500px; width: 100%;">
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Example Problems</h2>
+    <div class="examples">
+      <h3>1. Find force between two 5 kg masses 2 m apart.</h3>
+      <p><strong>Solution:</strong> F = G(m₁m₂)/r² = (6.67×10⁻¹¹ × 25)/4 = 4.17×10⁻¹⁰ N</p>
+
+      <h3>2. Calculate g at 6400 km from Earth's center (R = 6400 km).</h3>
+      <p><strong>Solution:</strong> g = GM/R² = 9.8 m/s² (on surface)</p>
+
+      <h3>3. What is escape velocity from Earth? (R = 6.4×10⁶ m, M = 6×10²⁴ kg)</h3>
+      <p><strong>Solution:</strong> vₑ = √(2GM/R) ≈ 11.2 km/s</p>
+
+      <h3>4. If g at surface is 9.8 m/s², find g at height R (i.e., h = R)</h3>
+      <p><strong>Solution:</strong> g' = g/(2)² = 9.8 / 4 = 2.45 m/s²</p>
+    </div>
+  </section>
+</body>
+</html>

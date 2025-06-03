@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thermodynamics - Physics Concepts</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #b30000;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 30px 50px;
+    }
+
+    h2, h3 {
+      color: #b30000;
+    }
+
+    .concepts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .concept-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .concept-card:hover {
+      transform: scale(1.05);
+    }
+
+    .equations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .equation {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      width: 240px;
+      text-align: center;
+      position: relative;
+    }
+
+    .equation:hover::after {
+      content: attr(data-info);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #ffecec;
+      color: #333;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+
+    .examples {
+      background-color: #fff3f3;
+      padding: 25px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    .alt-section {
+      background-color: #fff;
+      padding: 40px 50px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Physics</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="applications.html">Applications</a>
+      <a href="halloffame.html">Hall of Fame</a>
+      <a href="games.html">Games</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Introduction to Thermodynamics</h2>
+    <p>Thermodynamics is the branch of physics that deals with heat, temperature, and their relation to energy and work. It involves laws that describe how energy moves and changes in a system.</p>
+  </section>
+
+  <section class="alt-section">
+    <h2 style="text-align:center;">Core Concepts</h2>
+    <div class="concepts">
+      <div class="concept-card">
+        <h3>Temperature</h3>
+        <p>A measure of average kinetic energy of particles.</p>
+        <img src="temperature.jpg" alt="Temperature">
+      </div>
+
+      <div class="concept-card">
+        <h3>Heat</h3>
+        <p>Energy transferred due to temperature difference.</p>
+        <img src="heat.jpg" alt="Heat">
+      </div>
+
+      <div class="concept-card">
+        <h3>Internal Energy</h3>
+        <p>Total kinetic and potential energy of particles.</p>
+        <img src="internal_energy.jpg" alt="Internal Energy">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Important Equations</h2>
+    <div class="equations">
+      <div class="equation" data-info="Q = Heat added, m = mass, c = specific heat, ΔT = temperature change">
+        <h3>Q = mcΔT</h3>
+        <p>Heat transfer</p>
+      </div>
+      <div class="equation" data-info="ΔU = Change in internal energy, Q = Heat added, W = Work done by system">
+        <h3>ΔU = Q - W</h3>
+        <p>First Law</p>
+      </div>
+      <div class="equation" data-info="Isothermal: PV = constant">
+        <h3>PV = constant</h3>
+        <p>Boyle’s Law</p>
+      </div>
+      <div class="equation" data-info="pV = nRT, n = moles, R = gas constant">
+        <h3>Ideal Gas Law</h3>
+        <p>PV = nRT</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-section">
+    <h2>Laws of Thermodynamics</h2>
+    <ul>
+      <li><strong>Zeroth Law:</strong> If A = B and B = C in thermal equilibrium, then A = C.</li>
+      <li><strong>First Law:</strong> Energy can be changed from one form to another, but cannot be created or destroyed.</li>
+      <li><strong>Second Law:</strong> Heat cannot spontaneously flow from colder to hotter body.</li>
+      <li><strong>Third Law:</strong> As temperature approaches absolute zero, the entropy of a system approaches a minimum.</li>
+    </ul>
+    <img src="thermodynamics_laws.jpg" alt="Laws of Thermodynamics">
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Example Problems</h2>
+    <div class="examples">
+      <h3>1. Find heat required to raise temperature of 2 kg water by 20°C</h3>
+      <p><strong>Solution:</strong> Q = mcΔT = 2 × 4200 × 20 = 168,000 J</p>
+
+      <h3>2. If Q = 500 J and W = 200 J, what is ΔU?</h3>
+      <p><strong>Solution:</strong> ΔU = Q - W = 500 - 200 = 300 J</p>
+
+      <h3>3. A gas expands isothermally. If P₁V₁ = P₂V₂, find V₂</h3>
+      <p><strong>Solution:</strong> V₂ = P₁V₁ / P₂</p>
+    </div>
+  </section>
+</body>
+</html>

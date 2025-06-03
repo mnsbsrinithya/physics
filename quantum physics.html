@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quantum Physics</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 50px;
+    }
+
+    h2, h3 {
+      color: #1e3a8a;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 260px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .equation-box {
+      background-color: white;
+      border-left: 5px solid #1e3a8a;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+
+    .applications, .examples {
+      background-color: #dbeafe;
+      border-radius: 10px;
+      padding: 25px;
+      margin-top: 30px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #0f172a;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Quantum Physics</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Topics</a>
+      <a href="#">Equations</a>
+      <a href="#">Examples</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Overview</h2>
+    <p>
+      Quantum Physics is the branch of physics that deals with the behavior of particles on atomic and subatomic scales. It introduces concepts such as quantization of energy, wave-particle duality, uncertainty principle, and quantum entanglement.
+    </p>
+  </section>
+
+  <section>
+    <h2>Key Concepts</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Wave-Particle Duality</h3>
+        <p>Particles like electrons exhibit both wave and particle properties.</p>
+      </div>
+      <div class="card">
+        <h3>Uncertainty Principle</h3>
+        <p>It is impossible to know both the position and momentum of a particle with complete certainty.</p>
+      </div>
+      <div class="card">
+        <h3>Quantum Superposition</h3>
+        <p>A particle can exist in multiple states simultaneously until measured.</p>
+      </div>
+      <div class="card">
+        <h3>Quantum Tunneling</h3>
+        <p>Particles can pass through potential barriers that would be impossible in classical physics.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Important Equations</h2>
+    <div class="equation-box">
+      <h3>E = hf</h3>
+      <p>Energy of a photon is proportional to its frequency. (Planck's relation)</p>
+    </div>
+    <div class="equation-box">
+      <h3>λ = h/p</h3>
+      <p>de Broglie wavelength: Wave nature of particles where h is Planck’s constant and p is momentum.</p>
+    </div>
+    <div class="equation-box">
+      <h3>Δx · Δp ≥ ℏ / 2</h3>
+      <p>Heisenberg Uncertainty Principle: Limitation on simultaneous measurement of position and momentum.</p>
+    </div>
+    <div class="equation-box">
+      <h3>Ψ² = Probability Density</h3>
+      <p>The square of the wave function gives the probability of finding a particle.</p>
+    </div>
+  </section>
+
+  <section class="applications">
+    <h2>Applications</h2>
+    <ul>
+      <li><strong>Semiconductors:</strong> Basis of modern electronics and transistors.</li>
+      <li><strong>Quantum Computing:</strong> Uses qubits and superposition for computation.</li>
+      <li><strong>Laser Technology:</strong> Relies on stimulated emission of photons.</li>
+      <li><strong>Medical Imaging:</strong> MRI uses quantum properties of nuclei.</li>
+    </ul>
+  </section>
+
+  <section class="examples">
+    <h2>Example Problems</h2>
+    <h3>1. Find the energy of a photon with frequency 6×10¹⁴ Hz.</h3>
+    <p><strong>Solution:</strong> E = hf = 6.63×10⁻³⁴ × 6×10¹⁴ = 3.978×10⁻¹⁹ J</p>
+
+    <h3>2. Calculate the de Broglie wavelength of a 1 kg object moving at 1 m/s.</h3>
+    <p><strong>Solution:</strong> λ = h/p = 6.63×10⁻³⁴ / 1 = 6.63×10⁻³⁴ m</p>
+
+    <h3>3. If Δx = 1×10⁻¹⁰ m, what is the minimum Δp?</h3>
+    <p><strong>Solution:</strong> Δp ≥ ℏ / 2Δx = (1.055×10⁻³⁴) / (2×10⁻¹⁰) = 5.28×10⁻²⁵ kg·m/s</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Quantum Physics Learning Portal
+  </footer>
+</body>
+</html>

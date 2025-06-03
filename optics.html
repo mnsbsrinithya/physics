@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Optics - Physics Concepts</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f4f6;
+      color: #111827;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 50px;
+    }
+
+    h2, h3 {
+      color: #1e3a8a;
+    }
+
+    .concept-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .equation-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .applications, .examples {
+      background-color: #e0e7ff;
+      border-radius: 12px;
+      padding: 25px;
+      margin-top: 30px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Physics - Optics</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Concepts</a>
+      <a href="#">Applications</a>
+      <a href="#">Examples</a>
+      <a href="#">Games</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Introduction to Optics</h2>
+    <p>Optics is the branch of physics that studies the behavior and properties of light, including its interactions with matter and the construction of instruments that use or detect it.</p>
+  </section>
+
+  <section style="background-color: #ffffff;">
+    <h2 style="text-align:center;">Key Concepts</h2>
+    <div class="concept-grid">
+      <div class="card">
+        <h3>Reflection</h3>
+        <p>The bouncing back of light when it hits a surface.</p>
+        <img src="reflection.jpg" alt="Reflection">
+      </div>
+      <div class="card">
+        <h3>Refraction</h3>
+        <p>Bending of light as it passes through different media.</p>
+        <img src="refraction.jpg" alt="Refraction">
+      </div>
+      <div class="card">
+        <h3>Diffraction</h3>
+        <p>Spreading of light when it passes through a narrow slit.</p>
+        <img src="diffraction.jpg" alt="Diffraction">
+      </div>
+      <div class="card">
+        <h3>Interference</h3>
+        <p>When two waves overlap to form a resultant wave.</p>
+        <img src="interference.jpg" alt="Interference">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Important Equations</h2>
+    <div class="concept-grid">
+      <div class="equation-box">
+        <h3>v = fλ</h3>
+        <p>Wave Speed Equation</p>
+      </div>
+      <div class="equation-box">
+        <h3>n = c / v</h3>
+        <p>Refractive Index</p>
+      </div>
+      <div class="equation-box">
+        <h3>1/f = 1/v - 1/u</h3>
+        <p>Lens Formula</p>
+      </div>
+      <div class="equation-box">
+        <h3>θ = λ/d</h3>
+        <p>Diffraction Angle</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="applications">
+    <h2>Applications of Optics</h2>
+    <ul>
+      <li><strong>Microscopes and Telescopes:</strong> Use lenses and mirrors to magnify distant or small objects.</li>
+      <li><strong>Fiber Optics:</strong> Transmit light signals over long distances for communication.</li>
+      <li><strong>Laser Technology:</strong> Used in surgery, communication, and cutting materials.</li>
+      <li><strong>Spectroscopy:</strong> Used in chemical analysis and astronomy.</li>
+    </ul>
+    <img src="telescope.jpg" alt="Telescope">
+  </section>
+
+  <section class="examples">
+    <h2>Example Problems</h2>
+    <h3>1. A light ray passes from air (n=1.0) to water (n=1.33). If the angle of incidence is 30°, find the angle of refraction.</h3>
+    <p><strong>Solution:</strong> Use Snell’s Law: n₁sinθ₁ = n₂sinθ₂ ⇒ 1×sin30° = 1.33×sinθ₂ ⇒ θ₂ ≈ 22°</p>
+
+    <h3>2. A convex lens has a focal length of 10 cm. An object is placed 15 cm from the lens. Find the image distance.</h3>
+    <p><strong>Solution:</strong> 1/f = 1/v - 1/u ⇒ 1/10 = 1/v - 1/(-15) ⇒ v ≈ 30 cm</p>
+
+    <h3>3. What is the diffraction angle for light of wavelength 600 nm passing through a slit of width 0.1 mm?</h3>
+    <p><strong>Solution:</strong> θ = λ/d = 600×10⁻⁹ / 0.1×10⁻³ = 0.006 rad ≈ 0.34°</p>
+  </section>
+</body>
+</html>

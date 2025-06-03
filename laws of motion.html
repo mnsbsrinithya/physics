@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laws of Motion - Physics Concepts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #101c36;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+        section {
+            padding: 30px 50px;
+        }
+        .alt-section {
+            background-color: #f9c2d3;
+        }
+        h2, h3 {
+            color: #aa0055;
+        }
+        .key-concepts {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .concept-card, .concept-cards {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 20px;
+            width: auto;
+            max-width: 250px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .concept-cards {
+            max-width: 500px;
+        }
+        .concept-card:hover, .concept-cards:hover {
+            transform: scale(1.05);
+        }
+        .examples {
+            background-color: #ffe4ec;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        .equations {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .equation {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 20px;
+            width: 220px;
+            text-align: center;
+            position: relative;
+        }
+        .equation:hover::after {
+            content: attr(data-derivation);
+            position: absolute;
+            bottom: -80px;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background-color: #ffeff7;
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Physics</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="applications.html">Applications</a>
+        <a href="halloffame.html">Hall of Fame</a>
+        <a href="games.html">Games</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Introduction to Laws of Motion</h2>
+    <p>The laws of motion, formulated by Sir Isaac Newton, describe the relationship between the motion of an object and the forces acting on it. These laws are fundamental to understanding classical mechanics.</p>
+</section>
+
+<section class="alt-section">
+    <h2 style="text-align: center;">Newton's Laws</h2>
+    <div class="key-concepts">
+        <div class="concept-card">
+            <h3>1st Law</h3>
+            <p>An object at rest remains at rest and an object in motion continues in motion with the same speed and direction unless acted upon by an unbalanced external force.</p>
+            <img src="newton1.jpg" alt="Newton's First Law" width="100%">
+        </div>
+        <div class="concept-card">
+            <h3>2nd Law</h3>
+            <p>The rate of change of momentum of an object is directly proportional to the applied force and takes place in the direction in which the force acts. (F = ma)</p>
+            <img src="newton2.jpg" alt="Newton's Second Law" width="100%">
+        </div>
+        <div class="concept-card">
+            <h3>3rd Law</h3>
+            <p>For every action, there is an equal and opposite reaction. Forces always occur in pairs.</p>
+            <img src="newton3.jpg" alt="Newton's Third Law" width="100%">
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 style="text-align: center;">Applications and Concepts</h2>
+    <div class="key-concepts">
+        <div class="concept-cards">
+            <h3>Inertia</h3>
+            <p>Inertia is the tendency of an object to resist a change in its state of motion or rest. It depends on mass—the greater the mass, the greater the inertia.</p>
+        </div>
+        <div class="concept-cards">
+            <h3>Free Body Diagram (FBD)</h3>
+            <p>FBD is a diagram showing all the forces acting on a single object. It is essential for solving problems involving forces and motion.</p>
+        </div>
+    </div>
+</section>
+
+<section class="alt-section">
+    <h2 style="text-align: center;">Equations Related to Forces</h2>
+    <div class="equations">
+        <div class="equation" data-derivation="Derived from Newton's 2nd law">
+            <h3>Force</h3>
+            <p>F = ma</p>
+        </div>
+        <div class="equation" data-derivation="Weight is a force due to gravity">
+            <h3>Weight</h3>
+            <p>W = mg</p>
+        </div>
+        <div class="equation" data-derivation="Friction is proportional to normal force">
+            <h3>Friction</h3>
+            <p>f = μN</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 style="text-align:center;">Example Questions</h2>
+    <div class="examples">
+        <h3>1. A 5 kg object is acted on by a force of 20 N. What is the acceleration?</h3>
+        <p><strong>Solution:</strong> F = ma ⇒ a = F/m = 20/5 = 4 m/s²</p>
+
+        <h3>2. A block of mass 2 kg slides on a frictionless surface with acceleration 3 m/s². What is the net force?</h3>
+        <p><strong>Solution:</strong> F = ma = 2 × 3 = 6 N</p>
+
+        <h3>3. A book is kept on a table. Identify action-reaction forces.</h3>
+        <p><strong>Solution:</strong> Book applies force (weight) on table. Table applies equal and opposite normal reaction upward.</p>
+
+        <h3>4. Calculate frictional force for μ = 0.2 and normal force 50 N.</h3>
+        <p><strong>Solution:</strong> f = μN = 0.2 × 50 = 10 N</p>
+    </div>
+</section>
+
+</body>
+</html>

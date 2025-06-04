@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Simulations</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background:#F7AFC4;padding: 0px;margin: 0px; }
+        svg { border: 1px solid #ccc; background: #fff; margin-top: 20px;border-radius: 10px; }
+        input { padding: 5px; font-size: 16px; text-decoration: none; }
+        button {
+            background-color:#C80066;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+            border: 2px solid #C80066;
+        }
+        button:hover {
+            background-color: #B2002D;
+        }
+        h2,label {
+
+            color:#C80066;
+        }
+        header {
+            background-color: #101c36;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>Physics</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="applications.html">Applications</a>
+        <a href="halloffame.html">Hall of Fame</a>
+        <a href="games.html">Games</a>
+    </nav>
+</header>
+<div class="section">
+<h2>Simple Reflection Simulation</h2>
+<label>Angle of Incidence (°):</label>
+<input type="number" id="angle" min="0" max="89" value="45">
+<button onclick="draw()">Show Reflection</button>
+<br>
+<svg id="sim" width="500" height="300">
+
+
+
+    <line id="incident" stroke="red" stroke-width="2"/>
+
+    <line id="reflected" stroke="blue" stroke-width="2"/>
+
+    <line x1="250" y1="0" x2="250" y2="300" stroke="gray" stroke-width="1"/>
+</svg>
+</div>
+
+<script>
+function draw() {
+const angleDeg = Number(document.getElementById("angle").value);
+const angleRad = angleDeg * Math.PI / 180;
+const length = 100;
+
+
+const cx = 250, cy = 150;
+
+
+const ix = cx - length * Math.sin(angleRad);
+const iy = cy - length * Math.cos(angleRad);
+
+
+const rx = cx + length * Math.sin(angleRad);
+const ry = cy - length * Math.cos(angleRad);
+
+document.getElementById("incident").setAttribute("x1", ix);
+document.getElementById("incident").setAttribute("y1", iy);
+document.getElementById("incident").setAttribute("x2", cx);
+document.getElementById("incident").setAttribute("y2", cy);
+
+document.getElementById("reflected").setAttribute("x1", cx);
+document.getElementById("reflected").setAttribute("y1", cy);
+document.getElementById("reflected").setAttribute("x2", rx);
+document.getElementById("reflected").setAttribute("y2", ry);
+}
+
+</script>
+
+
+</body>
+</html>

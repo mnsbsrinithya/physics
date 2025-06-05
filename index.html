@@ -94,20 +94,23 @@
 
 
 
-    <script>
-        function showPopup() {
+<script>
+    function showPopup() {
         document.getElementById("popup").style.display = "block";
+        document.body.classList.add('popup-active');
     }
-        function hidePopup() {
+
+    function hidePopup() {
         document.getElementById("popup").style.display = "none";
+        document.body.classList.remove('popup-active');
     }
 </script>
 
 
 
+
 </body>
 </html>
-
 
 
 

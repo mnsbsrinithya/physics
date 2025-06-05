@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Physics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #C80066;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #F7AFC4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 50px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #C80066;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #C80066;
+            margin-bottom: 40px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #C80066;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            background-color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            background-color: #f9c2d3;
+            outline: none;
+            border-color: #F7AFC4;
+        }
+
+        textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        button {
+            padding: 15px;
+            background:#C80066;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background:#B2002D;
+        }
+
+        .social-icons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding: 20px 30px;
+            background: #1b263b;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Contact Us</h1>
+    <p>Have questions or want to get in touch with us? We'd love to hear from you. Please fill out the form below, and we'll get back to you as soon as possible.</p>
+
+    <form id="contactForm">
+        <div>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+
+        <div>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+
+        <div>
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+
+    <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:lahasritha@gmail.com">contact@physics.com</a></p>
+    </div>
+
+
+</div>
+
+<div class="footer">
+    <p>&copy; 2025 physics</p>
+</div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert("Thank you for reaching out! We'll get back to you soon.");
+        document.getElementById('contactForm').reset();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Us - Physics</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #F7AFC4;
+            color: #C80066;
+
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 40px;
+            color: #C80066;
+        }
+
+        .team {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .member {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .member:hover {
+            transform: translateY(-8px);
+        }
+
+        .member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #C80066;
+            margin-bottom: 15px;
+        }
+
+        .member h3 {
+            font-size: 22px;
+            margin: 10px 0 5px;
+            color: #C80066;
+        }
+
+        .member .info {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 50px;
+            color: #fff;
+            background: #1b263b;
+            padding: 20px;
+
+        }
+
+        @media (max-width: 600px) {
+            .team {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Meet Our Team</h1>
+
+<div class="team">
+    <div class="member">
+
+        <h3> Sri Nithya </h3>
+        <div class="info">
+            <p><strong>Roll No:</strong> AV.SC.U4AIE24142</p>
+            <p><strong>Section:</strong> B</p>
+            <p><strong>Contribution:</strong>Home,simulations</p>
+        </div>
+    </div>
+
+    <div class="member">
+
+        <h3>Shivani</h3>
+        <div class="info">
+            <p><strong>Roll No:</strong> AV.SC.U4AIE24126</p>
+            <p><strong>Section:</strong> B</p>
+            <p><strong>Contribution:</strong>Concepts</p>
+        </div>
+    </div>
+
+    <div class="member">
+
+        <h3>Grishma</h3>
+        <div class="info">
+            <p><strong>Roll No:</strong> AV.SC.U4AIE24107</p>
+            <p><strong>Section:</strong> B</p>
+            <p><strong>Contribution:</strong>hall of fame</p>
+        </div>
+    </div>
+
+    <div class="member">
+
+        <h3>Lahasritha</h3>
+        <div class="info">
+            <p><strong>Roll No:</strong> AV.SC.U4AIE24161</p>
+            <p><strong>Section:</strong> B</p>
+            <p><strong>Contribution:</strong>about us,contact us</p>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    &copy; 2025 Physics | All rights reserved.
+</div>
+
+</body>
+</html>

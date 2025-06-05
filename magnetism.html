@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Magnetism - Physics Concepts</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e6f0ff;
+      color: #1a1a2e;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px 40px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #cce6ff;
+      margin-right: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 50px;
+    }
+
+    h2, h3 {
+      color: #003366;
+    }
+
+    .concepts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .formula {
+      background-color: #ffffff;
+      border-left: 5px solid #003366;
+      margin: 20px 0;
+      padding: 15px 20px;
+      border-radius: 8px;
+    }
+
+    .highlight {
+      background-color: #d6eaff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Magnetism</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Chapters</a>
+      <a href="#">Formulas</a>
+      <a href="#">Exercises</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Introduction</h2>
+    <p>
+      Magnetism is a class of physical phenomena mediated by magnetic fields. It arises from moving electric charges and is one of the fundamental forces of nature. It is closely related to electricity through the theory of electromagnetism.
+    </p>
+  </section>
+
+  <section>
+    <h2>Key Concepts</h2>
+    <div class="concepts">
+      <div class="card">
+        <h3>Magnetic Field (B)</h3>
+        <p>A vector field that represents the magnetic influence on moving charges and magnetic materials.</p>
+      </div>
+      <div class="card">
+        <h3>Magnetic Force</h3>
+        <p>Force on a moving charge in a magnetic field given by <em>F = q(v × B)</em>.</p>
+      </div>
+      <div class="card">
+        <h3>Magnetic Dipole</h3>
+        <p>A magnetic dipole consists of two equal and opposite magnetic poles separated by a distance.</p>
+      </div>
+      <div class="card">
+        <h3>Earth’s Magnetism</h3>
+        <p>The Earth behaves like a giant magnet with magnetic poles near the geographic poles.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Important Formulas</h2>
+    <div class="formula">
+      <h3>B = μ₀I / (2πr)</h3>
+      <p>Magnetic field due to a long straight current-carrying wire.</p>
+    </div>
+    <div class="formula">
+      <h3>F = qvB sinθ</h3>
+      <p>Magnetic force on a moving charge in a magnetic field.</p>
+    </div>
+    <div class="formula">
+      <h3>Torque = MB sinθ</h3>
+      <p>Torque on a magnetic dipole in a uniform magnetic field.</p>
+    </div>
+    <div class="formula">
+      <h3>Magnetic Flux (Φ) = B ⋅ A</h3>
+      <p>Total magnetic field passing through an area A.</p>
+    </div>
+  </section>
+
+  <section class="highlight">
+    <h2>Applications</h2>
+    <ul>
+      <li>Electric motors and generators</li>
+      <li>Magnetic levitation and maglev trains</li>
+      <li>Magnetic resonance imaging (MRI)</li>
+      <li>Compass navigation</li>
+    </ul>
+  </section>
+
+  <section class="highlight">
+    <h2>Example Problems</h2>
+    <h3>1. Calculate the magnetic field at a distance of 5 cm from a wire carrying 10 A current.</h3>
+    <p><strong>Solution:</strong> B = (μ₀I)/(2πr) = (4π×10⁻⁷ × 10)/(2π × 0.05) = 4×10⁻⁵ T</p>
+
+    <h3>2. Find the force on a 1 C charge moving at 2×10⁶ m/s perpendicular to a 0.2 T field.</h3>
+    <p><strong>Solution:</strong> F = qvB = 1 × 2×10⁶ × 0.2 = 4×10⁵ N</p>
+
+    <h3>3. What is the torque on a magnetic dipole of moment 0.1 Am² in a 0.5 T field at 30°?</h3>
+    <p><strong>Solution:</strong> Torque = MB sinθ = 0.1 × 0.5 × sin(30°) = 0.025 Nm</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Magnetism Learning Page
+  </footer>
+
+</body>
+</html>

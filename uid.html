@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall of Fame</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #F7AFC4;
+            margin: 0;
+            padding: 40px 20px;
+            color: #C80066;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 40px;
+            color: #C80066;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: white;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover img {
+            opacity: 0.1;
+        }
+
+        .card:hover h2 {
+            visibility: hidden;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(200, 0, 102, 0.9); /* Increase opacity here */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            font-size: 16px;
+            padding: 20px;
+            transition: opacity 0.3s ease;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .card:hover .overlay {
+            opacity: 1;
+        }
+
+        .card h2 {
+            margin: 15px 0;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Hall of Fame</h1>
+
+<div class="grid">
+
+    <div class="card">
+        <img src="Isaac newton.jpg" alt="Isaac Newton">
+        <div class="overlay">Laws of Motion & Universal Gravitation</div>
+        <h2>Isaac Newton</h2>
+    </div>
+
+    <div class="card">
+        <img src="albert einstein.jpg" alt="Albert Einstein">
+        <div class="overlay">Theory of Relativity</div>
+        <h2>Albert Einstein</h2>
+    </div>
+
+    <div class="card">
+        <img src="marie curie.jpg" alt="Marie Curie">
+        <div class="overlay">Radioactivity & Discovery of Radium</div>
+        <h2>Marie Curie</h2>
+    </div>
+
+    <div class="card">
+        <img src="james clerk.jpg" alt="James Clerk Maxwell">
+        <div class="overlay">Electromagnetic Theory</div>
+        <h2>James Clerk Maxwell</h2>
+    </div>
+
+    <div class="card">
+        <img src="galileo.jpg" alt="Galileo Galilei">
+        <div class="overlay">Heliocentrism & Telescope Improvements</div>
+        <h2>Galileo Galilei</h2>
+    </div>
+
+    <div class="card">
+        <img src="tesla.jpg" alt="Nikola Tesla">
+        <div class="overlay">Alternating Current (AC) Electricity</div>
+        <h2>Nikola Tesla</h2>
+    </div>
+
+    <div class="card">
+        <img src="hawking.jpg" alt="Stephen Hawking">
+        <div class="overlay">Black Hole Radiation (Hawking Radiation)</div>
+        <h2>Stephen Hawking</h2>
+    </div>
+
+    <div class="card">
+        <img src="faraday.jpg" alt="Michael Faraday">
+        <div class="overlay">Electromagnetic Induction</div>
+        <h2>Michael Faraday</h2>
+    </div>
+
+    <div class="card">
+        <img src="erwin.jpg" alt="Erwin Schrödinger">
+        <div class="overlay">Quantum Mechanics – Schrödinger Equation</div>
+        <h2>Erwin Schrödinger</h2>
+    </div>
+
+    <div class="card">
+        <img src="feynman.jpg" alt="Richard Feynman">
+        <div class="overlay">Quantum Electrodynamics</div>
+        <h2>Richard Feynman</h2>
+    </div>
+
+    <div class="card">
+        <img src="bohr.jpg" alt="Niels Bohr">
+        <div class="overlay">Bohr Model of the Atom</div>
+        <h2>Niels Bohr</h2>
+    </div>
+
+    <div class="card">
+        <img src="planck.jpg" alt="Max Planck">
+        <div class="overlay">Quantum Theory</div>
+        <h2>Max Planck</h2>
+    </div>
+
+    <div class="card">
+        <img src="werner.jpg" alt="Werner Heisenberg">
+        <div class="overlay">Uncertainty Principle</div>
+        <h2>Werner Heisenberg</h2>
+    </div>
+
+    <div class="card">
+        <img src="fermi.jpg" alt="Enrico Fermi">
+        <div class="overlay">Nuclear Reactor & Beta Decay</div>
+        <h2>Enrico Fermi</h2>
+    </div>
+
+    <div class="card">
+        <img src="thomson.jpg" alt="J.J. Thomson">
+        <div class="overlay">Discovery of the Electron</div>
+        <h2>J.J. Thomson</h2>
+    </div>
+
+    <div class="card">
+        <img src="franklin.jpg" alt="Rosalind Franklin">
+        <div class="overlay">X-ray Diffraction Images of DNA</div>
+        <h2>Rosalind Franklin</h2>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,28 +1,17 @@
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Simulations</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background:#F7AFC4;padding: 0px;margin: 0px; }
-        svg { border: 1px solid #ccc; background: #fff; margin-top: 20px;border-radius: 10px; }
-        input { padding: 5px; font-size: 16px; text-decoration: none; }
-        button {
-            background-color:#C80066;
-            color: white;
-            padding: 0.5rem 1.2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s;
-            border: 2px solid #C80066;
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background: #F7AFC4;
+            margin: 0;
+            padding: 0;
         }
-        button:hover {
-            background-color: #B2002D;
-        }
-        h2,label {
 
-            color:#C80066;
-        }
         header {
             background-color: #101c36;
             color: white;
@@ -35,6 +24,7 @@
         header h1 {
             margin: 0;
         }
+
         nav a {
             color: white;
             text-decoration: none;
@@ -42,6 +32,51 @@
             font-weight: bold;
         }
 
+        .section {
+            padding: 30px 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        svg {
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 10px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        input {
+            padding: 5px;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        button {
+            background-color: #C80066;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 5px;
+            border: 2px solid #C80066;
+            transition: background 0.3s;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #B2002D;
+        }
+
+        h2, label {
+            color: #C80066;
+        }
     </style>
 </head>
 <body>
@@ -50,59 +85,182 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="concepts.html">Concepts</a>
-        <a href="applications.html">Applications</a>
         <a href="halloffame.html">Hall of Fame</a>
         <a href="games.html">Simulations</a>
     </nav>
 </header>
+
 <div class="section">
-<h2>Simple Reflection Simulation</h2>
-<label>Angle of Incidence (°):</label>
-<input type="number" id="angle" min="0" max="89" value="45">
-<button onclick="draw()">Show Reflection</button>
-<br>
-<svg id="sim" width="500" height="300">
 
+    <div class="card">
+        <h2>Reflection Simulation</h2>
+        <label>Angle of Incidence (°):</label>
+        <input type="number" id="angleReflection" min="0" max="89" value="45">
+        <button onclick="drawReflection()">Show Reflection</button>
+        <svg id="simReflection" width="500" height="300">
+            <line id="incident" stroke="red" stroke-width="2"/>
+            <line id="reflected" stroke="blue" stroke-width="2"/>
+            <line x1="250" y1="0" x2="250" y2="300" stroke="gray" stroke-width="1"/>
+        </svg>
+    </div>
 
+    <div class="card">
+        <h2>Collision Simulation</h2>
+        <button onclick="startCollision()">Start</button>
+        <svg id="canvasCollision" width="600" height="200">
+            <circle id="ball1" cx="100" cy="100" r="20" fill="#C80066"/>
+            <circle id="ball2" cx="500" cy="100" r="20" fill="#F7AFC4"/>
+        </svg>
+    </div>
 
-    <line id="incident" stroke="red" stroke-width="2"/>
+    <div class="card">
+        <h2>Projectile Motion</h2>
+        <label>Angle (°): <input id="angleProjectile" type="number" value="45"></label>
+        <label>Velocity: <input id="velocityProjectile" type="number" value="60"></label>
+        <button onclick="drawProjectile()">Simulate</button>
+        <svg id="canvasProjectile" width="600" height="300">
+            <path id="trajectory" stroke="blue" fill="none" stroke-width="2"/>
+        </svg>
+    </div>
 
-    <line id="reflected" stroke="blue" stroke-width="2"/>
+    <div class="card">
+        <h2>Pendulum</h2>
+        <label>Amplitude (°): <input id="amplitudeInput" type="number" value="30" /></label>
+        <label>Length (px): <input id="lengthInput" type="number" value="130" /></label><br>
+        <label>Speed: <input id="speedInput" type="number" step="0.01" value="0.05" /></label>
+        <br><br>
+        <button onclick="startPendulum()">Start</button>
+        <svg id="pendulumSVG" width="300" height="250">
+            <line id="rod" x1="150" y1="20" x2="150" y2="150" stroke="black" stroke-width="2"/>
+            <circle id="bob" cx="150" cy="150" r="15" fill="blue" />
+        </svg>
+    </div>
 
-    <line x1="250" y1="0" x2="250" y2="300" stroke="gray" stroke-width="1"/>
-</svg>
 </div>
 
 <script>
-function draw() {
-const angleDeg = Number(document.getElementById("angle").value);
-const angleRad = angleDeg * Math.PI / 180;
-const length = 100;
+    // Reflection
+    function drawReflection() {
+        const angleDeg = Number(document.getElementById("angleReflection").value);
+        const angleRad = angleDeg * Math.PI / 180;
+        const length = 100;
+        const cx = 250, cy = 150;
 
+        const ix = cx - length * Math.sin(angleRad);
+        const iy = cy - length * Math.cos(angleRad);
 
-const cx = 250, cy = 150;
+        const rx = cx + length * Math.sin(angleRad);
+        const ry = cy - length * Math.cos(angleRad);
 
+        document.getElementById("incident").setAttribute("x1", ix);
+        document.getElementById("incident").setAttribute("y1", iy);
+        document.getElementById("incident").setAttribute("x2", cx);
+        document.getElementById("incident").setAttribute("y2", cy);
 
-const ix = cx - length * Math.sin(angleRad);
-const iy = cy - length * Math.cos(angleRad);
+        document.getElementById("reflected").setAttribute("x1", cx);
+        document.getElementById("reflected").setAttribute("y1", cy);
+        document.getElementById("reflected").setAttribute("x2", rx);
+        document.getElementById("reflected").setAttribute("y2", ry);
+    }
 
+    // Projectile
+    function drawProjectile() {
+        const angle = parseFloat(document.getElementById("angleProjectile").value);
+        const velocity = parseFloat(document.getElementById("velocityProjectile").value);
+        const angleRad = angle * Math.PI / 180;
+        const g = 9.8;
+        const scaleX = 5, scaleY = 1.5;
+        const baseY = 250;
 
-const rx = cx + length * Math.sin(angleRad);
-const ry = cy - length * Math.cos(angleRad);
+        let path = "M 0 " + baseY;
+        let t = 0;
 
-document.getElementById("incident").setAttribute("x1", ix);
-document.getElementById("incident").setAttribute("y1", iy);
-document.getElementById("incident").setAttribute("x2", cx);
-document.getElementById("incident").setAttribute("y2", cy);
+        while (t < 10) {
+            const x = velocity * Math.cos(angleRad) * t;
+            const y = velocity * Math.sin(angleRad) * t - 0.5 * g * t * t;
 
-document.getElementById("reflected").setAttribute("x1", cx);
-document.getElementById("reflected").setAttribute("y1", cy);
-document.getElementById("reflected").setAttribute("x2", rx);
-document.getElementById("reflected").setAttribute("y2", ry);
-}
+            const px = x * scaleX;
+            const py = baseY - y * scaleY;
 
+            if (py > 300) break;
+
+            path += " L " + px + " " + py;
+            t += 0.1;
+        }
+
+        document.getElementById("trajectory").setAttribute("d", path);
+    }
+
+    // Collision
+    let interval;
+    function startCollision() {
+        clearInterval(interval);
+        const ball1 = document.getElementById("ball1");
+        const ball2 = document.getElementById("ball2");
+
+        let x1 = 100, x2 = 500;
+        let v1 = 2, v2 = -2;
+
+        interval = setInterval(() => {
+            x1 += v1;
+            x2 += v2;
+
+            if (x2 - x1 <= 40) {
+                [v1, v2] = [v2, v1];
+            }
+
+            ball1.setAttribute("cx", x1);
+            ball2.setAttribute("cx", x2);
+
+            if (x1 < 0 || x2 > 600) {
+                clearInterval(interval);
+            }
+        }, 20);
+    }
+
+    // Pendulum
+    let angle = 0;
+    let time = 0;
+    let animationId;
+    let amplitude = 30;
+    let pendulumLength = 130;
+    let speed = 0.05;
+
+    function startPendulum() {
+        cancelAnimationFrame(animationId);
+        time = 0;
+
+        amplitude = parseFloat(document.getElementById("amplitudeInput").value);
+        pendulumLength = parseFloat(document.getElementById("lengthInput").value);
+        speed = parseFloat(document.getElementById("speedInput").value);
+
+        animatePendulum();
+    }
+
+    function animatePendulum() {
+        time += speed;
+        angle = Math.sin(time) * amplitude;
+
+        const originX = 150;
+        const originY = 20;
+        const rad = angle * Math.PI / 180;
+
+        const x = originX + pendulumLength * Math.sin(rad);
+        const y = originY + pendulumLength * Math.cos(rad);
+
+        document.getElementById("bob").setAttribute("cx", x);
+        document.getElementById("bob").setAttribute("cy", y);
+        document.getElementById("rod").setAttribute("x2", x);
+        document.getElementById("rod").setAttribute("y2", y);
+
+        animationId = requestAnimationFrame(animatePendulum);
+    }
 </script>
-
-
 </body>
 </html>
+
+
+          
+       
+
+

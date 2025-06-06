@@ -100,6 +100,54 @@
       border-radius: 15px;
       margin-top: 20px;
     }
+    .calculator-container {
+      margin: 20px auto;
+      max-width: 700px;
+      background: rgba(110, 224, 165, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #003366;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 12px;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 12px;
+      padding: 10px 20px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005f87;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+    }
   </style>
 </head>
 <body>
@@ -187,6 +235,109 @@
       <h3>4. Use Bernoulli: If P₁ + ½ρv₁² = P₂ + ½ρv₂²</h3>
       <p><strong>Application:</strong> Used in airplane wings, pipe flow, etc.</p>
     </div>
+    <div class="calculator-container">
+    <h2>FLUID MECHANICS</h2>
+    <label for="formula">Choose Calculation:</label>
+    <select id="formula" onchange="displayFields()">
+      <option value="">-- Select --</option>
+      <option value="pressure">Pressure: P = F / A</option>
+      <option value="force">Force: F = P × A</option>
+      <option value="area">Area: A = F / P</option>
+      <option value="density">Density: ρ = m / V</option>
+      <option value="buoyant">Buoyant Force: F = ρ × V × g</option>
+    </select>
+
+    <div id="inputFields"></div>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function displayFields() {
+      const formula = document.getElementById("formula").value;
+      const container = document.getElementById("inputFields");
+      let html = "";
+
+      switch (formula) {
+        case "pressure":
+          html = `
+            <label>Force (N):</label><input id="F" type="number" />
+            <label>Area (m²):</label><input id="A" type="number" />
+            <button onclick="calcPressure()">Calculate Pressure</button>
+          `;
+          break;
+        case "force":
+          html = `
+            <label>Pressure (Pa):</label><input id="P" type="number" />
+            <label>Area (m²):</label><input id="A2" type="number" />
+            <button onclick="calcForce()">Calculate Force</button>
+          `;
+          break;
+        case "area":
+          html = `
+            <label>Force (N):</label><input id="F2" type="number" />
+            <label>Pressure (Pa):</label><input id="P2" type="number" />
+            <button onclick="calcArea()">Calculate Area</button>
+          `;
+          break;
+        case "density":
+          html = `
+            <label>Mass (kg):</label><input id="m" type="number" />
+            <label>Volume (m³):</label><input id="V" type="number" />
+            <button onclick="calcDensity()">Calculate Density</button>
+          `;
+          break;
+        case "buoyant":
+          html = `
+            <label>Density of fluid (kg/m³):</label><input id="rho" type="number" />
+            <label>Volume displaced (m³):</label><input id="vol" type="number" />
+            <label>g (m/s²):</label><input id="g" type="number" value="9.8" />
+            <button onclick="calcBuoyantForce()">Calculate Buoyant Force</button>
+          `;
+          break;
+        default:
+          html = "";
+      }
+
+      container.innerHTML = html;
+      document.getElementById("result").innerHTML = "";
+    }
+
+    function calcPressure() {
+      const F = parseFloat(document.getElementById("F").value);
+      const A = parseFloat(document.getElementById("A").value);
+      const P = F / A;
+      document.getElementById("result").innerText = `Pressure: ${P.toFixed(2)} Pa`;
+    }
+
+    function calcForce() {
+      const P = parseFloat(document.getElementById("P").value);
+      const A = parseFloat(document.getElementById("A2").value);
+      const F = P * A;
+      document.getElementById("result").innerText = `Force: ${F.toFixed(2)} N`;
+    }
+
+    function calcArea() {
+      const F = parseFloat(document.getElementById("F2").value);
+      const P = parseFloat(document.getElementById("P2").value);
+      const A = F / P;
+      document.getElementById("result").innerText = `Area: ${A.toFixed(4)} m²`;
+    }
+
+    function calcDensity() {
+      const m = parseFloat(document.getElementById("m").value);
+      const V = parseFloat(document.getElementById("V").value);
+      const rho = m / V;
+      document.getElementById("result").innerText = `Density: ${rho.toFixed(2)} kg/m³`;
+    }
+
+    function calcBuoyantForce() {
+      const rho = parseFloat(document.getElementById("rho").value);
+      const V = parseFloat(document.getElementById("vol").value);
+      const g = parseFloat(document.getElementById("g").value);
+      const F = rho * V * g;
+      document.getElementById("result").innerText = `Buoyant Force: ${F.toFixed(2)} N`;
+    }
+  </script>
   </section>
 </body>
 </html>

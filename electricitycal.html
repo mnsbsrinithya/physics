@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electricity & Electrostatics - Physics Concepts</title>
+  <style>
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  
+  background-image: url('https://i.pinimg.com/736x/6f/d7/e2/6fd7e26f6868cb9b4068dfbf32176059.jpg');
+  background-size: cover;          
+  background-position: center;     
+  background-repeat: no-repeat;    
+  background-attachment: fixed;    
+}
+
+.calculator-container {
+  margin: 20px auto;               
+  max-width: 700px;                
+  background: rgba(189, 207, 219, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #1e3a8a;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 12px;
+}
+
+select, input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 12px;
+  padding: 10px 20px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3b5db3;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+}
+
+  </style>
+</head>
+<body>
+  <div class="calculator-container">
+    <h2>ELECTRICITY</h2>
+    <label for="formula">Choose Calculation:</label>
+    <select id="formula" onchange="displayFields()">
+      <option value="">-- Select --</option>
+       <!-- Coulomb's Law Options -->
+    <option value="coulomb">Coulomb's Law: F = k·q1·q2/r²</option>
+    <option value="coulomb_q1">Find q1: </option>
+    <option value="coulomb_q2">Find q2: </option>
+    <option value="coulomb_r">Find r: </option>
+    <!-- Electric Field Options -->
+    <option value="electric_field">Electric Field: E = F/q</option>
+    <option value="electric_field_force">Find F: </option>
+    <option value="electric_field_charge">Find q: </option>
+    <!-- Ohm's Law Options -->
+    <option value="ohm">Ohm's Law: V = I·R</option>
+    <option value="ohm_current">Find I: </option>
+    <option value="ohm_resistance">Find R: </option>
+    <!-- Power Options -->
+    <option value="power">Electric Power: P = V·I</option>
+    <option value="power_voltage">Find V: </option>
+    <option value="power_current">Find I: </option>
+  
+
+    </select>
+
+    <div id="inputFields"></div>
+    <div id="result"></div>
+  </div>
+  <script>
+function displayFields() {
+  const formula = document.getElementById("formula").value;
+  const container = document.getElementById("inputFields");
+  let html = "";
+
+  switch(formula) {
+    case "coulomb":
+      html = `
+        <label>Charge q₁ (C):</label><input id="q1" type="number" />
+        <label>Charge q₂ (C):</label><input id="q2" type="number" />
+        <label>Distance r (m):</label><input id="r" type="number" />
+        <button onclick="calcCoulomb()">Calculate F</button>
+      `;
+      break;
+    case "coulomb_q1":
+      html = `
+        <label>Force F (N):</label><input id="force" type="number" />
+        <label>Charge q₂ (C):</label><input id="q2" type="number" />
+        <label>Distance r (m):</label><input id="r" type="number" />
+        <button onclick="calcCoulombQ1()">Calculate q₁</button>
+      `;
+      break;
+    case "coulomb_q2":
+      html = `
+        <label>Force F (N):</label><input id="force" type="number" />
+        <label>Charge q₁ (C):</label><input id="q1" type="number" />
+        <label>Distance r (m):</label><input id="r" type="number" />
+        <button onclick="calcCoulombQ2()">Calculate q₂</button>
+      `;
+      break;
+    case "coulomb_r":
+      html = `
+        <label>Force F (N):</label><input id="force" type="number" />
+        <label>Charge q₁ (C):</label><input id="q1" type="number" />
+        <label>Charge q₂ (C):</label><input id="q2" type="number" />
+        <button onclick="calcCoulombR()">Calculate r</button>
+      `;
+      break;
+    case "electric_field":
+      html = `
+        <label>Force F (N):</label><input id="forceEF" type="number" />
+        <label>Charge q (C):</label><input id="charge" type="number" />
+        <button onclick="calcElectricField()">Calculate E</button>
+      `;
+      break;
+    case "electric_field_force":
+      html = `
+        <label>Electric Field E (N/C):</label><input id="E" type="number" />
+        <label>Charge q (C):</label><input id="charge2" type="number" />
+        <button onclick="calcElectricFieldForce()">Calculate F</button>
+      `;
+      break;
+    case "electric_field_charge":
+      html = `
+        <label>Force F (N):</label><input id="forceEF2" type="number" />
+        <label>Electric Field E (N/C):</label><input id="E2" type="number" />
+        <button onclick="calcElectricFieldCharge()">Calculate q</button>
+      `;
+      break;
+    case "ohm":
+      html = `
+        <label>Current I (A):</label><input id="I" type="number" />
+        <label>Resistance R (Ω):</label><input id="R" type="number" />
+        <button onclick="calcOhm()">Calculate V</button>
+      `;
+      break;
+    case "ohm_current":
+      html = `
+        <label>Voltage V (V):</label><input id="V" type="number" />
+        <label>Resistance R (Ω):</label><input id="R2" type="number" />
+        <button onclick="calcOhmCurrent()">Calculate I</button>
+      `;
+      break;
+    case "ohm_resistance":
+      html = `
+        <label>Voltage V (V):</label><input id="V2" type="number" />
+        <label>Current I (A):</label><input id="I2" type="number" />
+        <button onclick="calcOhmResistance()">Calculate R</button>
+      `;
+      break;
+    case "power":
+      html = `
+        <label>Voltage V (V):</label><input id="V3" type="number" />
+        <label>Current I (A):</label><input id="I3" type="number" />
+        <button onclick="calcPower()">Calculate P</button>
+      `;
+      break;
+    case "power_voltage":
+      html = `
+        <label>Power P (W):</label><input id="P" type="number" />
+        <label>Current I (A):</label><input id="I4" type="number" />
+        <button onclick="calcPowerVoltage()">Calculate V</button>
+      `;
+      break;
+    case "power_current":
+      html = `
+        <label>Power P (W):</label><input id="P2" type="number" />
+        <label>Voltage V (V):</label><input id="V4" type="number" />
+        <button onclick="calcPowerCurrent()">Calculate I</button>
+      `;
+      break;
+    default:
+      html = "";
+  }
+
+  container.innerHTML = html;
+  document.getElementById("result").innerHTML = "";
+}
+
+function calcCoulomb() {
+  const q1 = parseFloat(document.getElementById("q1").value);
+  const q2 = parseFloat(document.getElementById("q2").value);
+  const r = parseFloat(document.getElementById("r").value);
+  const k = 9e9;
+  const force = k * (q1 * q2) / (r * r);
+  document.getElementById("result").innerText = `Force: ${force.toFixed(4)} N`;
+}
+
+function calcCoulombQ1() {
+  const F = parseFloat(document.getElementById("force").value);
+  const q2 = parseFloat(document.getElementById("q2").value);
+  const r = parseFloat(document.getElementById("r").value);
+  const k = 9e9;
+  const q1 = (F * r * r) / (k * q2);
+  document.getElementById("result").innerText = `q₁: ${q1.toExponential(4)} C`;
+}
+
+function calcCoulombQ2() {
+  const F = parseFloat(document.getElementById("force").value);
+  const q1 = parseFloat(document.getElementById("q1").value);
+  const r = parseFloat(document.getElementById("r").value);
+  const k = 9e9;
+  const q2 = (F * r * r) / (k * q1);
+  document.getElementById("result").innerText = `q₂: ${q2.toExponential(4)} C`;
+}
+
+function calcCoulombR() {
+  const F =	parseFloat(document.getElementById("force").value);
+  const q1 = parseFloat(document.getElementById("q1").value);
+  const q2 = parseFloat(document.getElementById("q2").value);
+  const k = 9e9;
+  const r = Math.sqrt((k * q1 * q2) / F);
+  document.getElementById("result").innerText = `r: ${r.toFixed(4)} m`;
+}
+
+function calcElectricField() {
+  const F = parseFloat(document.getElementById("forceEF").value);
+  const q = parseFloat(document.getElementById("charge").value);
+  const E = F / q;
+  document.getElementById("result").innerText = `E: ${E.toFixed(4)} N/C`;
+}
+
+function calcElectricFieldForce() {
+  const E =	parseFloat(document.getElementById("E").value);
+  const q = parseFloat(document.getElementById("charge2").value);
+  const F = E * q;
+  document.getElementById("result").innerText = `F: ${F.toFixed(4)} N`;
+}
+
+function calcElectricFieldCharge() {
+  const F = parseFloat(document.getElementById("forceEF2").value);
+  const E = parseFloat(document.getElementById("E2").value);
+  const q = F / E;
+  document.getElementById("result").innerText = `q: ${q.toExponential(4)} C`;
+}
+
+function calcOhm() {
+  const I = parseFloat(document.getElementById("I").value);
+  const R = parseFloat(document.getElementById("R").value);
+  const V = I * R;
+  document.getElementById("result").innerText = `V: ${V.toFixed(2)} V`;
+}
+
+function calcOhmCurrent() {
+  const V = parseFloat(document.getElementById("V").value);
+  const R = parseFloat(document.getElementById("R2").value);
+  const I = V / R;
+  document.getElementById("result").innerText = `I: ${I.toFixed(4)} A`;
+}
+
+function calcOhmResistance() {
+  const V = parseFloat(document.getElementById("V2").value);
+  const I = parseFloat(document.getElementById("I2").value);
+  const R = V / I;
+  document.getElementById("result").innerText = `R: ${R.toFixed(4)} Ω`;
+}
+
+function calcPower() {
+  const V = parseFloat(document.getElementById("V3").value);
+  const I = parseFloat(document.getElementById("I3").value);
+  const P = V * I;
+  document.getElementById("result").innerText = `P: ${P.toFixed(2)} W`;
+}
+
+function calcPowerVoltage() {
+  const P = parseFloat(document.getElementById("P").value);
+  const I = parseFloat(document.getElementById("I4").value);
+  const V = P / I;
+  document.getElementById("result").innerText = `V: ${V.toFixed(2)} V`;
+}
+
+function calcPowerCurrent() {
+  const P = parseFloat(document.getElementById("P2").value);
+  const V = parseFloat(document.getElementById("V4").value);
+  const I = P / V;
+  document.getElementById("result").innerText = `I: ${I.toFixed(4)} A`;
+}
+</script>  
+</body>
+</html>

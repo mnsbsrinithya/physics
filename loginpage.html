@@ -20,102 +20,276 @@
       align-items: center;
     }
 
-    .login-container {
-      background-color: #f9f9f9;
-      padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      width: 100%;
-      max-width: 400px;
+   .login-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      width: 400px;
+      max-width: 90%;
     }
-
-    .login-container h2 {
+    
+    h1 {
       text-align: center;
-      margin-bottom: 25px;
-      color: #C80066;
+      margin-bottom: 30px;
+      color: #333;
     }
-
+    
     .form-group {
       margin-bottom: 20px;
     }
-
+    
     label {
       display: block;
       margin-bottom: 8px;
-      color: #C80066;
       font-weight: 600;
+      color: #db0786;
     }
-
+    
     input[type="text"],
     input[type="password"] {
       width: 100%;
-      padding: 10px 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
+      padding: 14px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: border-color 0.3s;
     }
-
+    
     input[type="text"]:focus,
     input[type="password"]:focus {
       border-color: #2575fc;
       outline: none;
+      box-shadow: 0 0 0 2px rgba(37, 117, 252, 0.2);
     }
-
-    .btn-login {
-      width: 100%;
-      padding: 12px;
-      background-color: #C80066;
-      color: white;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
+    
+    .password-container {
+      position: relative;
+    }
+    
+    .toggle-password {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      color: #777;
     }
-
+    
+    .strength-meter {
+      height: 6px;
+      background-color: #eee;
+      border-radius: 3px;
+      margin: 10px 0;
+      overflow: hidden;
+    }
+    
+    .strength-meter-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 3px;
+      transition: width 0.3s ease, background-color 0.3s ease;
+    }
+    
+    .strength-text {
+      font-size: 14px;
+      text-align: right;
+      height: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .requirements {
+      margin: 15px 0;
+      padding-left: 20px;
+      color: #666;
+    }
+    
+    .requirements li {
+      margin: 5px 0;
+      font-size: 14px;
+      list-style-type: none;
+      position: relative;
+    }
+    
+    .requirements li::before {
+      content: "•";
+      position: absolute;
+      left: -15px;
+    }
+    
+    .invalid {
+      color: #e74c3c;
+    }
+    
+    .valid {
+      color: #2ecc71;
+    }
+    
+    .btn-login {
+      /* This was missing a semicolon at the end of the line below */
+      background: linear-gradient(to right, #2575fc, #b71684);
+      background-image: url('https://i.pinimg.com/736x/23/ed/43/23ed430b99cfefc7778cbddbed84fe6f.jpg');
+      color: white;
+      border: none;
+      padding: 14px;
+      width: 100%;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.3s;
+      margin-top: 10px;
+    }
+    
     .btn-login:hover {
-      background-color: #1a5ed1;
+      opacity: 0.9;
     }
-
-    .extra-links {
+    
+    .btn-login:disabled {
+      background: #db0786;
+      cursor: not-allowed;
+      opacity: 1;
+    }
+    
+    .signup-link {
       text-align: center;
-      margin-top: 15px;
-      font-size: 0.9rem;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
     }
-
-    .extra-links a {
-      color: #C80066;
+    
+    .signup-link a {
+      color: #2575fc;
       text-decoration: none;
-    }
-
-    .extra-links a:hover {
-      text-decoration: underline;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
-
-  <div class="login-container">
-    <h2>Login</h2>
-   
-    <form onsubmit="event.preventDefault(); window.location.href='index.html';">
+<div class="login-container">
+    <h1>Secure Login</h1>
+    <form id="loginForm">
       <div class="form-group">
-        <label for="username">Username or Email</label>
-        <input type="text" id="username" name="username" required />
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          placeholder="Enter your username"
+        />
       </div>
+      
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required />
+        <div class="password-container">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Enter your password"
+            autocomplete="off"
+          />
+          <span class="toggle-password" id="togglePassword">👁️</span>
+        </div>
+        
+        <div class="strength-text" id="strengthText"></div>
+        <div class="strength-meter">
+          <div class="strength-meter-fill" id="strengthMeter"></div>
+        </div>
+        
+        <ul class="requirements">
+          <li id="length">At least 8 characters</li>
+          <li id="uppercase">Contains uppercase letters</li>
+          <li id="lowercase">Contains lowercase letters</li>
+          <li id="number">Contains numbers</li>
+          <li id="special">Contains special characters</li>
+        </ul>
       </div>
-      <a href="index.html">
-      <button type="submit" class="btn-login">Login</button>
-      </a>
+      
+      <!-- Note: This button is initially DISABLED until the password strength is “Medium” or higher. -->
+      <button type="submit" class="btn-login" id="loginButton" disabled>
+        Login
+      </button>
+      
+      <div class="signup-link">
+        Don't have an account? <a href="#">Sign Up</a>
+      </div>
     </form>
-    <div class="extra-links">
-      <p><a href="#">Forgot Password?</a></p>
-      <p>Don't have an account? <a href="#">Sign Up</a></p>
-    </div>
   </div>
+
+  <script>
+    const passwordInput = document.getElementById('password');
+    const strengthText = document.getElementById('strengthText');
+    const strengthMeter = document.getElementById('strengthMeter');
+    const togglePassword = document.getElementById('togglePassword');
+    const loginButton = document.getElementById('loginButton');
+    
+    // Password strength criteria
+    const strengthLevels = [
+      { text: 'Very Weak', color: '#e74c3c', percent: 20 },
+      { text: 'Weak',      color: '#f39c12', percent: 40 },
+      { text: 'Medium',    color: '#f1c40f', percent: 60 },
+      { text: 'Strong',    color: '#2ecc71', percent: 80 },
+      { text: 'Very Strong', color: '#27ae60', percent: 100 }
+    ];
+    
+    // Toggle password visibility
+    togglePassword.addEventListener('click', function() {
+      const type =
+        passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      this.textContent = type === 'password' ? '👁️' : '🔒';
+    });
+    
+    // Check password strength on each input
+    passwordInput.addEventListener('input', function() {
+      const password = this.value;
+      let strength = 0;
+      
+      // Check each criterion
+      const hasLength    = password.length >= 8;
+      const hasUppercase = /[A-Z]/.test(password);
+      const hasLowercase = /[a-z]/.test(password);
+      const hasNumber    = /[0-9]/.test(password);
+      const hasSpecial   = /[^A-Za-z0-9]/.test(password);
+      
+      // Update requirement list styling
+      document.getElementById('length').className    = hasLength    ? 'valid' : 'invalid';
+      document.getElementById('uppercase').className = hasUppercase ? 'valid' : 'invalid';
+      document.getElementById('lowercase').className = hasLowercase ? 'valid' : 'invalid';
+      document.getElementById('number').className    = hasNumber    ? 'valid' : 'invalid';
+      document.getElementById('special').className   = hasSpecial   ? 'valid' : 'invalid';
+      
+      // Tally up how many criteria are met
+      strength += hasLength    ? 1 : 0;
+      strength += hasUppercase ? 1 : 0;
+      strength += hasLowercase ? 1 : 0;
+      strength += hasNumber    ? 1 : 0;
+      strength += hasSpecial   ? 1 : 0;
+      
+      // Map “strength” (0–5) to an index 0–4
+      const index = strength > 4 ? 4 : strength < 1 ? 0 : strength - 1;
+      const { text, color, percent } = strengthLevels[index];
+      
+      // Update the meter bar + text
+      strengthMeter.style.width = `${percent}%`;
+      strengthMeter.style.backgroundColor = color;
+      strengthText.textContent = `Password Strength: ${text}`;
+      strengthText.style.color = color;
+      
+      // Enable the “Login” button only if strength ≥ Medium (i.e. index ≥ 2) and at least 8 chars
+      loginButton.disabled = strength < 3 || !hasLength;
+    });
+    
+    // Fake form submission handler
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Login successful!');
+      // In a real app, you’d send credentials to your server here
+    });
+  </script>
 
 </body>
 </html>

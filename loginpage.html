@@ -126,7 +126,7 @@
     }
     
     .btn-login {
-      /* This was missing a semicolon at the end of the line below */
+     
       background: linear-gradient(to right, #2575fc, #b71684);
       background-image: url('https://i.pinimg.com/736x/23/ed/43/23ed430b99cfefc7778cbddbed84fe6f.jpg');
       color: white;
@@ -208,14 +208,12 @@
         </ul>
       </div>
       
-      <!-- Note: This button is initially DISABLED until the password strength is “Medium” or higher. -->
+     
       <button type="submit" class="btn-login" id="loginButton" disabled>
         Login
       </button>
       
-      <div class="signup-link">
-        Don't have an account? <a href="#">Sign Up</a>
-      </div>
+     
     </form>
   </div>
 
@@ -226,7 +224,7 @@
     const togglePassword = document.getElementById('togglePassword');
     const loginButton = document.getElementById('loginButton');
     
-    // Password strength criteria
+    
     const strengthLevels = [
       { text: 'Very Weak', color: '#e74c3c', percent: 20 },
       { text: 'Weak',      color: '#f39c12', percent: 40 },
@@ -235,7 +233,7 @@
       { text: 'Very Strong', color: '#27ae60', percent: 100 }
     ];
     
-    // Toggle password visibility
+    
     togglePassword.addEventListener('click', function() {
       const type =
         passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -243,51 +241,51 @@
       this.textContent = type === 'password' ? '👁️' : '🔒';
     });
     
-    // Check password strength on each input
+   
     passwordInput.addEventListener('input', function() {
       const password = this.value;
       let strength = 0;
       
-      // Check each criterion
+     
       const hasLength    = password.length >= 8;
       const hasUppercase = /[A-Z]/.test(password);
       const hasLowercase = /[a-z]/.test(password);
       const hasNumber    = /[0-9]/.test(password);
       const hasSpecial   = /[^A-Za-z0-9]/.test(password);
       
-      // Update requirement list styling
+      
       document.getElementById('length').className    = hasLength    ? 'valid' : 'invalid';
       document.getElementById('uppercase').className = hasUppercase ? 'valid' : 'invalid';
       document.getElementById('lowercase').className = hasLowercase ? 'valid' : 'invalid';
       document.getElementById('number').className    = hasNumber    ? 'valid' : 'invalid';
       document.getElementById('special').className   = hasSpecial   ? 'valid' : 'invalid';
       
-      // Tally up how many criteria are met
+      
       strength += hasLength    ? 1 : 0;
       strength += hasUppercase ? 1 : 0;
       strength += hasLowercase ? 1 : 0;
       strength += hasNumber    ? 1 : 0;
       strength += hasSpecial   ? 1 : 0;
       
-      // Map “strength” (0–5) to an index 0–4
+     
       const index = strength > 4 ? 4 : strength < 1 ? 0 : strength - 1;
       const { text, color, percent } = strengthLevels[index];
       
-      // Update the meter bar + text
+      
       strengthMeter.style.width = `${percent}%`;
       strengthMeter.style.backgroundColor = color;
       strengthText.textContent = `Password Strength: ${text}`;
       strengthText.style.color = color;
       
-      // Enable the “Login” button only if strength ≥ Medium (i.e. index ≥ 2) and at least 8 chars
+      
       loginButton.disabled = strength < 3 || !hasLength;
     });
     
-    // Fake form submission handler
+    
     document.getElementById('loginForm').addEventListener('submit', function(e) {
       e.preventDefault();
       alert('Login successful!');
-      // In a real app, you’d send credentials to your server here
+      
     });
   </script>
 

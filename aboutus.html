@@ -1,123 +1,114 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>About Us - Physics</title>
+    <meta charset="UTF-8">
+    <title>About Us - Physics World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #F7AFC4;
-            color: #C80066;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
 
+        header {
+            background-color: #0d1b2a;
+            padding: 20px 40px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        section {
+            padding: 60px 20px;
             text-align: center;
         }
 
-        h1 {
-            font-size: 48px;
-            margin-bottom: 40px;
-            color: #C80066;
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #111;
         }
 
-        .team {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            max-width: 900px;
+        p, li {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .member {
-            background: #fff;
-            border-radius: 16px;
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 30px auto;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #0d1b2a;
+            color: white;
+            text-align: center;
             padding: 20px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .member:hover {
-            transform: translateY(-8px);
-        }
-
-
-        .member h3 {
-            font-size: 22px;
-            margin: 10px 0 5px;
-            color: #C80066;
-        }
-
-        .member .info {
-            font-size: 16px;
-            color: #444;
-            line-height: 1.6;
-        }
-
-        .footer {
-            margin-top: 50px;
-            color: #fff;
-            background: #1b263b;
-            padding: 20px;
-
-        }
-
-        @media (max-width: 600px) {
-            .team {
-                grid-template-columns: 1fr;
-            }
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-<h1>Meet Our Team</h1>
+<header>
+    <h1>Physics World</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="halloffame.html">Hall of Fame</a>
+        <a href="simulations.html">Simulations</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
 
-<div class="team">
-    <div class="member">
+<section>
+    <h2>About Us</h2>
+    <p>
+        At <strong>Physics World</strong>, we believe that understanding the universe begins with asking the right questions —
+        and physics helps us do just that. Our platform was created by passionate educators and students who aim to make learning
+        physics both exciting and accessible for everyone.
+    </p>
+    <br>
+    <p>
+        Whether you're a curious beginner, a student preparing for exams, or someone who simply loves the wonders of science,
+        our site is your gateway to exploring core concepts, real-world applications, and interactive simulations.
+    </p>
+    <ul>
+        <li>✅ Breaking down complex ideas into engaging lessons</li>
+        <li>✅ Providing simulations and interactive experiences</li>
+        <li>✅ Highlighting physicists in our <strong>Hall of Fame</strong></li>
+        <li>✅ Sharing both timeless principles and modern discoveries</li>
+    </ul>
+    <p>
+        Join us in exploring how physics shapes the world — from ancient innovations to future technologies.
+    </p>
+</section>
 
-        <h3> Sri Nithya </h3>
-        <div class="info">
-            <p><strong>Roll No:</strong> AV.SC.U4AIE24142</p>
-            <p><strong>Section:</strong> B</p>
-            <p><strong>Contribution:</strong>Home,simulations</p>
-        </div>
-    </div>
-
-    <div class="member">
-
-        <h3>Shivani</h3>
-        <div class="info">
-            <p><strong>Roll No:</strong> AV.SC.U4AIE24126</p>
-            <p><strong>Section:</strong> B</p>
-            <p><strong>Contribution:</strong>Concepts</p>
-        </div>
-    </div>
-
-    <div class="member">
-
-        <h3>Grishma</h3>
-        <div class="info">
-            <p><strong>Roll No:</strong> AV.SC.U4AIE24107</p>
-            <p><strong>Section:</strong> B</p>
-            <p><strong>Contribution:</strong>hall of fame</p>
-        </div>
-    </div>
-
-    <div class="member">
-
-        <h3>Lahasritha</h3>
-        <div class="info">
-            <p><strong>Roll No:</strong> AV.SC.U4AIE24161</p>
-            <p><strong>Section:</strong> B</p>
-            <p><strong>Contribution:</strong>about us,contact us</p>
-        </div>
-    </div>
-</div>
-
-<div class="footer">
-    &copy; 2025 Physics | All rights reserved.
-</div>
+<footer>
+    &copy; 2025 Physics World. All rights reserved.
+</footer>
 
 </body>
 </html>

@@ -134,9 +134,7 @@
     // Reflection
     function drawReflection() {
         const angleDeg = Number(document.getElementById("angleReflection").value);
-        if(angleDeg<0|| angleDeg>360){
-            alert("enter value between 0 to 180);
-                  }
+       
         const angleRad = angleDeg * Math.PI / 180;
         const length = 100;
         const cx = 250, cy = 150;

@@ -113,15 +113,7 @@
         </svg>
     </div>
 
-    <div class="card">
-        <h2>Projectile Motion</h2>
-        <label>Angle (°): <input id="angleProjectile" type="number" value="45"></label>
-        <label>Velocity: <input id="velocityProjectile" type="number" value="60"></label>
-        <button onclick="drawProjectile()">Simulate</button>
-        <svg id="canvasProjectile" width="600" height="300">
-            <path id="trajectory" stroke="blue" fill="none" stroke-width="2"/>
-        </svg>
-    </div>
+    
 
     <div class="card">
         <h2>Pendulum</h2>
@@ -163,34 +155,7 @@
         document.getElementById("reflected").setAttribute("y2", ry);
     }
 
-    // Projectile
-    function drawProjectile() {
-        const angle = parseFloat(document.getElementById("angleProjectile").value);
-        const velocity = parseFloat(document.getElementById("velocityProjectile").value);
-        const angleRad = angle * Math.PI / 180;
-        const g = 9.8;
-        const scaleX = 5, scaleY = 1.5;
-        const baseY = 250;
-
-        let path = "M 0 " + baseY;
-        let t = 0;
-
-        while (t < 10) {
-            const x = velocity * Math.cos(angleRad) * t;
-            const y = velocity * Math.sin(angleRad) * t - 0.5 * g * t * t;
-
-            const px = x * scaleX;
-            const py = baseY - y * scaleY;
-
-            if (py > 300) break;
-
-            path += " L " + px + " " + py;
-            t += 0.1;
-        }
-
-        document.getElementById("trajectory").setAttribute("d", path);
-    }
-
+   
     // Collision
     let interval;
     function startCollision() {

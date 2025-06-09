@@ -124,12 +124,86 @@
             font-size: 18px;
             color: #333;
         }
+        .team {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .member {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .member:hover {
+            transform: translateY(-8px);
+        }
+
+
+        .member h3 {
+            font-size: 22px;
+            margin: 10px 0 5px;
+            color: #C80066;
+        }
+
+        .member .info {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.6;
+        }
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+<h1>Meet Our Team</h1>
 
+<div class="team">
+    <div class="member">
+
+        <h3> Sri Nithya </h3>
+        <div class="info">
+            <p><strong>Roll No:</strong> AV.SC.U4AIE24142</p>
+            <p><strong>Section:</strong> B</p>
+            <p><strong>Contribution:</strong>Home,simulations</p>
+        </div>
+    </div>
+
+    <div class="member">
+
+        <h3>Shivani</h3>
+        <div class="info">
+            <p><strong>Roll No:</strong> AV.SC.U4AIE24126</p>
+            <p><strong>Section:</strong> B</p>
+            <p><strong>Contribution:</strong>Concepts</p>
+        </div>
+    </div>
+
+    <div class="member">
+
+        <h3>Grishma</h3>
+        <div class="info">
+            <p><strong>Roll No:</strong> AV.SC.U4AIE24107</p>
+            <p><strong>Section:</strong> B</p>
+            <p><strong>Contribution:</strong>hall of fame</p>
+        </div>
+    </div>
+
+    <div class="member">
+
+        <h3>Lahasritha</h3>
+        <div class="info">
+            <p><strong>Roll No:</strong> AV.SC.U4AIE24161</p>
+            <p><strong>Section:</strong> B</p>
+            <p><strong>Contribution:</strong>about us,contact us</p>
+        </div>
+    </div>
+</div><hr>
 <div class="container">
     <h1>Contact Us</h1>
     <p>Have questions or want to get in touch with us? We'd love to hear from you. Please fill out the form below, and we'll get back to you as soon as possible.</p>

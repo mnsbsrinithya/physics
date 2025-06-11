@@ -77,6 +77,7 @@
         h2, label {
             color: #C80066;
         }
+        .box { padding: 15px; border-radius: 10px; background: white; box-shadow: 0 0 10px #ccc; max-width: 600px; margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -112,8 +113,29 @@
             <circle id="ball2" cx="500" cy="100" r="20" fill="#F7AFC4"/>
         </svg>
     </div>
+    <div id="wave" class="card">
+        <h3>Wave Simulator </h3>
+        <label>Amplitude: <span id="ampVal">50</span></label>
+        <input type="range" min="10" max="100" value="50" id="amplitude" oninput="drawUserWave()">
+        <br>
+        <label>Frequency: <span id="freqVal">5</span></label>
+        <input type="range" min="1" max="10" value="5" id="frequency" oninput="drawUserWave()">
 
-    
+        <svg width="500" height="150">
+
+            <path id="userWave" stroke="blue" fill="none"/>
+        </svg>
+
+    </div></div>
+    <div class="card">
+        <h2>Projectile Motion</h2>
+        <label>Angle (°): <input id="angleProjectile" type="number" value="45"></label>
+        <label>Velocity: <input id="velocityProjectile" type="number" value="60"></label>
+        <button onclick="drawProjectile()">Simulate</button>
+        <svg id="canvasProjectile" width="600" height="300">
+            <path id="trajectory" stroke="blue" fill="none" stroke-width="2"/>
+        </svg>
+    </div>
 
     <div class="card">
         <h2>Pendulum</h2>
@@ -128,20 +150,23 @@
         </svg>
     </div>
 
-</div>
+
 
 <script>
     // Reflection
     function drawReflection() {
         const angleDeg = Number(document.getElementById("angleReflection").value);
-       
+        if (isNaN(angleDeg) || angleDeg < 0 || angleDeg > 90) {
+            alert("Please enter a valid angle between 0° and 90°.");
+            return;
+        }
+
         const angleRad = angleDeg * Math.PI / 180;
         const length = 100;
         const cx = 250, cy = 150;
 
         const ix = cx - length * Math.sin(angleRad);
         const iy = cy - length * Math.cos(angleRad);
-
         const rx = cx + length * Math.sin(angleRad);
         const ry = cy - length * Math.cos(angleRad);
 
@@ -149,14 +174,50 @@
         document.getElementById("incident").setAttribute("y1", iy);
         document.getElementById("incident").setAttribute("x2", cx);
         document.getElementById("incident").setAttribute("y2", cy);
-
         document.getElementById("reflected").setAttribute("x1", cx);
         document.getElementById("reflected").setAttribute("y1", cy);
         document.getElementById("reflected").setAttribute("x2", rx);
         document.getElementById("reflected").setAttribute("y2", ry);
     }
 
-   
+    // Projectile
+    function drawProjectile() {
+        const angle = parseFloat(document.getElementById("angleProjectile").value);
+        const velocity = parseFloat(document.getElementById("velocityProjectile").value);
+
+        if (isNaN(angle) || angle < 0 || angle > 90) {
+            alert("Angle must be between 0° and 90°.");
+            return;
+        }
+        if (isNaN(velocity) || velocity <= 0) {
+            alert("Velocity must be a positive number.");
+            return;
+        }
+
+        const angleRad = angle * Math.PI / 180;
+        const g = 9.8;
+        const scaleX = 5, scaleY = 1.5;
+        const baseY = 250;
+
+        let path = "M 0 " + baseY;
+        let t = 0;
+
+        while (t < 10) {
+            const x = velocity * Math.cos(angleRad) * t;
+            const y = velocity * Math.sin(angleRad) * t - 0.5 * g * t * t;
+
+            const px = x * scaleX;
+            const py = baseY - y * scaleY;
+
+            if (py > 300) break;
+
+            path += " L " + px + " " + py;
+            t += 0.1;
+        }
+
+        document.getElementById("trajectory").setAttribute("d", path);
+    }
+
     // Collision
     let interval;
     function startCollision() {
@@ -200,6 +261,19 @@
         pendulumLength = parseFloat(document.getElementById("lengthInput").value);
         speed = parseFloat(document.getElementById("speedInput").value);
 
+        if (isNaN(amplitude) || amplitude < 0 || amplitude > 90) {
+            alert("Amplitude must be between 0° and 90°.");
+            return;
+        }
+        if (isNaN(pendulumLength) || pendulumLength <= 0) {
+            alert("Length must be a positive number.");
+            return;
+        }
+        if (isNaN(speed) || speed <= 0) {
+            alert("Speed must be a positive number.");
+            return;
+        }
+
         animatePendulum();
     }
 
@@ -221,12 +295,67 @@
 
         animationId = requestAnimationFrame(animatePendulum);
     }
+
+    // Wave Matching Game
+    function startWaveGame() {
+        document.getElementById("waveGame").style.display = "block";
+        document.getElementById("game").style.display = "none";
+
+        drawUserWave();
+    }
+
+
+
+
+    function drawUserWave() {
+        const amp = Number(document.getElementById("amplitude").value);
+        const freq = Number(document.getElementById("frequency").value);
+        const path = generateWavePath(amp, freq);
+        document.getElementById("userWave").setAttribute("d", path);
+
+
+        document.getElementById("ampVal").innerText = amp;
+        document.getElementById("freqVal").innerText = freq;
+    }
+
+
+    function generateWavePath(amplitude, frequency) {
+        let path = "M 0 75 ";
+        for (let x = 0; x <= 500; x++) {
+            let y = 75 + amplitude * Math.sin((x / 500) * frequency * 2 * Math.PI);
+            path += `L ${x} ${y} `;
+        }
+        return path;
+    }
+
+    function checkWaveMatch() {
+        const amp = Number(document.getElementById("amplitude").value);
+        const freq = Number(document.getElementById("frequency").value);
+        const feedback = document.getElementById("waveFeedback");
+
+        if (isNaN(amp) || amp < 10 || amp > 100) {
+            alert("Amplitude must be between 10 and 100.");
+            return;
+        }
+
+        if (isNaN(freq) || freq < 1 || freq > 10) {
+            alert("Frequency must be between 1 and 10.");
+            return;
+        }
+
+
+    }
 </script>
+
 </body>
 </html>
 
-
           
-       
+      
 
+  
 
+         
+
+     
+      
